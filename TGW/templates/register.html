@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>汉购网 -注册</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/register.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.idcode.css">
+		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="../js/gVerify.js"></script>
+		<script type="text/javascript" src="../js/jquery.idcode.js"></script>
+		<script type="text/javascript" src="../js/register-1.js"></script>
+		<script type="text/javascript" src="../js/register-2.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="header-wrap">
+		  	<header class="public-head-layout">
+			    <h1 class="site-logo">
+			    	<a href="#"><img src="../images/logo.jpg"></a>
+			    </h1>
+	            <div class="nc-login-now">
+	            	我已经注册，现在就
+	            	<a href="login.html">登录</a>
+	            </div>
+          	</header>
+		</div>
+        <!--主要部分  -->
+        <div class="nc-register-bg">
+		  	<div class="nc-register-box">
+		    	<div class="nc-register-layout">
+		    		<!--左边-->
+		      		<div class="left">
+		        		<div class="nc-register-mode">
+		        			<!--注册--顶部-->
+		          			<ul class="tabs-nav">
+		            			<li class="tabulous_active"><a href="#tabs-pc">账号注册</a><i></i></li>
+		                        <li><a href="#tabs-phone">手机注册</a><i></i></li>
+		                    </ul>
+		                    <!--注册--底部-->
+		          			<div class="tabs-container">
+		          				<!--账号注册-->
+		            			<div class="tabs-content show">
+	              					<form class="nc-login-form" id="tabs-pc">
+	              						
+	                					<dl>
+						                    <dt>用户名：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="请使用3-15个中、英文、数字及“-”符号" type="text" id="username">
+						                 	 </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>设置密码：</dt>
+							                <dd>
+						                    	<input class="text" placeholder="6-20个大小写英文字母、符号或数字" type="text" id="pad">
+							                </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>确认密码：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="请再次输入密码" type="text" id="confirmpas">
+						                  </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>邮箱：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="输入常用邮箱作为验证及找回密码使用"  type="text" id="mailbox">
+						                 	 </dd>
+						                </dl>
+						                <div class="code-div">
+						                  	<dl>
+						                    	<dt>验证码：</dt>
+						                    	<dd>
+						                      		<input class="text w100" placeholder="输入验证码" type="text" id="code_input">
+						                    	</dd>
+						                  	</dl>
+					                  		<span>
+					                  			<div id="v_container" style="width: 120px;height: 52px;"></div>
+					                  		</span> 
+	                					</div>
+		                                <dl class="clause-div">
+							                <dd>
+							                    <input class="checkbox" checked="checked" type="checkbox" id="check">
+						                    	阅读并同意<a href="#" title="阅读并同意">《服务协议》</a>
+							                </dd>
+						                </dl>
+						                <div class="submit-div">
+						                	<input type="button" value="立即注册" id="submit" class="submit"/>
+						                </div>
+					              	</form>
+					            </div>
+					            <!--手机注册-->
+		                        <div class="tabs-content" id="phonereg">
+						            <form class="nc-login-form" id="tabs-phone">
+						                <dl>
+					                  		<dt>手机号：</dt>
+					                  		<dd>
+					                    		<input class="text" placeholder="请输入手机号码" type="text" id="phonenumber">
+					                  		</dd>
+				                		</dl>
+	                					<div class="code-div">
+						                  	<dl>
+						                    	<dt>验证码：</dt>
+						                    	<dd>
+						                      		<input class="text w100" placeholder="输入验证码" type="text" id ="Txtidcode">
+						                    	</dd>
+						                  	</dl>
+					                  		<span>
+					                  			<div id="idcode" style="width: 120px;height: 52px;"></div>
+					                  		</span> 
+	                					</div>
+					                	<div class="tiptext">
+					                		确保上方验证码输入正确，点击
+					                		<span><a href="#"><i class="icon-mobile-phone"></i>发送短信验证</a></span>
+					                		，并将您手机短信所接收到的“6位动态码”输入到下方短信验证，再提交下一步。
+					                	</div>
+					                	<dl>
+						                  	<dt>短信验证：</dt>
+						                  	<dd>
+						                    	<input placeholder="输入6位短信验证码" class="text" type="text" id="msg">
+						                  	</dd>
+						                </dl>
+						                <div class="submit-div">
+						                  	<input class="submit" value="下一步" type="button" id="nextsubmit">
+						                </div>
+						            </form>
+					            </div>
+					            <!--下一步-->
+					            <div class="tabs-content" id="nextreg">
+					              	<form class="nc-login-form" id="nextstep">
+						                <dl>
+						                    <dt>用户名：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="请使用3-15个中、英文、数字及“-”符号" type="text" id="pusername">
+						                 	 </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>设置密码：</dt>
+							                <dd>
+						                    	<input class="text" placeholder="6-20个大小写英文字母、符号或数字" type="text" id="ppad">
+							                </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>确认密码：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="请再次输入密码" type="text" id="pconfirmpas">
+						                  </dd>
+						                </dl>
+						                <dl>
+						                  	<dt>邮箱：</dt>
+						                  	<dd>
+						                    	<input class="text" placeholder="输入常用邮箱作为验证及找回密码使用"  type="text" id="pmailbox">
+						                 	 </dd>
+						                </dl>
+		                                <dl class="clause-div">
+							                <dd>
+							                    <input class="checkbox" checked="checked" type="checkbox">
+						                    	阅读并同意<a href="#" title="阅读并同意">《服务协议》</a>
+							                </dd>
+						                </dl>
+						                <div class="submit-div">
+						                  	<input value="提交注册" class="submit" title="提交注册" type="submit" id="phonenext">
+						                </div>
+					              	</form>
+					            </div>
+		                    </div>
+		        		</div>
+		      		</div>
+		      		<!--右侧-->
+	      			<div class="right">
+		                <div class="api-login">
+		          			<h4>使用合作网站账号直接登录</h4>
+		                    <a href="#" title="QQ账号登录" class="qq"><i></i></a>
+                            <a href="#" title="微信账号登录" class="wx"><i></i></a>
+		                </div>
+		                <div class="reister-after">
+				          <h4>注册之后您可以</h4>
+				          	<ol>
+				            	<li class="ico01"><i></i>购买商品支付订单</li>
+				            	<li class="ico02"><i></i>收藏商品关注店铺</li>
+					            <li class="ico03"><i></i>安全交易诚信无忧</li>
+					            <li class="ico04"><i></i>积分获取优惠购物</li>
+					            <li class="ico05"><i></i>会员等级享受特权</li>
+					            <li class="ico06"><i></i>评价晒单站外分享</li>
+				          	</ol>
+				        </div>
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+		<!--底部-->
+		<div class="wwi-footer">
+			<div class="cti wrapper"></div>
+			<div class="footer">
+				<div class="wrapper">
+					<div class="clearfix">
+						<div class="fl right-flag">
+							<a href="#"><img src="../images/credit-flag3.png"></a>
+							<a href="#"><img src="../images/isc2.png"></a>
+						</div>
+						<div class="fl about-us">
+							<p>
+								<a href="#">返回首页</a><span>|</span> 
+								<a href="#">商家入驻</a><span>|</span> 
+								<a href="#">联系我们</a><span>|</span> 
+								<a href="#">关于汉购网</a><span>|</span> 
+								<a href="#">汉搜云</a><span>|</span>
+								<a href="#">友情链接</a>
+							</p>
+							<p>
+								CopyRight © 2007-2016 汉购网交流中心 
+								<a href="#" style="color:#666">鄂ICP备14015152号-1</a>
+								NewPower Co. 版权所有
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1177 @@
+@charset "utf-8";
+body{background:#f8f8f8}
+.pr{
+	padding-left:0 ;
+}
+/*<!-- 焦点图上 -->*/
+.ncs-detail{
+	width:1200px;
+	width:1200px!important; 
+	margin:auto;
+	min-height:500px;
+	margin-bottom:20px;
+	border:solid 1px #EEE;
+	background:#fff;
+	position:relative;
+	z-index:2;
+}
+/*<!-- 放大镜左-->*/
+.ncs-goods-picture{
+	background-color:#FFF;
+	position:absolute;
+	z-index:99;
+	top:0;
+	left:0;
+}
+/*中图*/
+.ncs-goods-picture .gallery_wrap{
+	height:400px;
+	width:400px;
+	position:relative;
+	overflow:hidden;
+}
+.ncs-goods-picture .smallImg{
+	padding-left:20px ;
+	padding-top: 20px;
+	height:400px;
+	width:400px;
+	overflow:hidden;
+	position: relative;
+}
+.ncs-goods-picture .smallImg img{
+	width:360px;
+	height:360px;
+}
+/*移动小区域*/
+.ncs-goods-picture .smallArea{
+	width: 100px; height: 100px; 
+	/*background: rgba(22,111,200,0.8);*/
+	
+	
+	border: 2px solid #FFFFFF;
+	box-shadow:8px 8px 5px rgba(153,153,153,1);
+	position: absolute;
+	left: 20px; 
+	top: 20px;
+	cursor: move;
+	display: none;
+}
+/*大图*/
+.ncs-goods-picture .bigArea{
+	height:400px;
+	width:400px;
+	position:absolute;
+	left:420px;
+	top:0px;
+	overflow:hidden;
+	background: #4FC0E8;
+	box-shadow:4px 4px 0 rgba(0,0,0,.05);
+	display: none;
+}
+.ncs-goods-picture .bigImg{
+	position: absolute;
+	top: 0px;
+	left:0px;
+	width: 800px;
+	height: 800px;
+}
+/*小图*/
+.ncs-goods-picture .controller_wrap{
+	background:rgba(255,255,255,.7);
+	padding:0;
+	position:absolute;
+	left:20px;
+	right:20px;
+	bottom:-62px;
+}
+.ncs-goods-picture .controller{
+	width:360px;
+	height:72px;
+	position:relative;
+	overflow:hidden;
+}
+.ncs-goods-picture .controller ul{
+	font-size:0;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.ncs-goods-picture .controller li{
+	vertical-align:middle;
+	letter-spacing:normal;
+	word-spacing:normal;
+	display:inline-block;
+	width:72px;
+}
+.ncs-goods-picture .controller img{
+	max-width:58px;
+	max-height:58px;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	padding:1px;
+	border:1px solid #EEE;
+	overflow:hidden;
+}
+/*小图当前样式*/
+.ncs-goods-picture .controller .current-controller img{
+	padding:0;
+	border-width:2px;
+	border-color:#F32613;
+}
+/*商品图片及收藏分享*/
+.ncs-handle{
+	width:350px;
+	height:24px;
+	padding-top:10px;
+	border-top:dotted 1px #EEE;
+	position:absolute;
+	z-index:1;
+	left:10px;
+	top:455px;
+}
+.ncs-handle a{
+	color:#777;
+	background-color:#FFF;
+	float:left;
+	padding:1px 6px;
+	margin-right:5px;
+	border:solid 1px #F5F5F5;
+	border-radius:4px;
+}
+.ncs-handle a:hover{
+	text-decoration:none;
+	color:#333;
+	background-color:#F5F5F5;
+}
+.ncs-handle a i{
+	background:url(../images/ncs_public_img.png) no-repeat -100px -70px;
+	vertical-align:middle;
+	width:12px;
+	height:12px;
+	display:inline-block;
+	margin-right:4px;
+}
+/*焦点图上中*/
+.ncs-goods-summary{
+	background-color:#FFF;
+	min-height:500px;
+	width: 590px;
+	margin-left:400px;
+}
+/*标题*/
+.ncs-goods-summary .name{
+	padding:15px 20px;
+}
+.ncs-goods-summary .name h1,.ncs-goods-summary .name strong{
+	font:700 16px/21px "Microsoft Yahei";
+	color:#333;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	display:block;
+	overflow:hidden;
+}
+.ncs-goods-summary .name strong{
+	font-weight:400;
+	font-size:12px;
+	line-height:17px;
+	color:#777;
+	white-space:normal;
+	margin-top:5px;
+}
+/*价格*/
+.ncs-goods-summary dl{
+	font-size:0;
+}
+.ncs-goods-summary dt{
+	text-align:right;
+	width:76px;
+	margin-right:6px;
+}
+.ncs-goods-summary dd{
+	text-align:left;
+	width:490px;
+}
+.ncs-goods-summary dl dd,.ncs-goods-summary dl dt{
+	font-size:12px;
+	line-height:24px;
+	vertical-align:top;
+	letter-spacing:normal;
+	word-spacing:normal;
+	display:inline-block;
+	min-height:24px;
+	padding:6px 0 0;
+}
+/*价格*/
+.ncs-meta{
+	color:#999;
+	background:#f5f5f5 url(../images/goods_meta_bg.png) no-repeat 0 50%;
+	background-size:cover;
+	padding:15px 0;
+	position:relative;
+	z-index:3;
+}
+.ncs-meta dl dd,.ncs-meta dl dt{
+	line-height:30px;
+	height:30px;
+	font-family:"Microsoft YaHei","\5FAE\8F6F\96C5\9ED1"!important;
+	font:12px/1.5 Arial;
+}
+.ncs-meta dl dd a{
+	color:#333;
+	text-decoration:underline;
+	vertical-align:middle;
+	display:inline-block;
+}
+.ncs-meta .cost-price strong{
+	text-decoration:line-through;
+	color:#c00;
+}
+.ncs-meta .price strong{
+	font:700 30px/25px Tahoma;
+	vertical-align:middle;
+	text-shadow:0 1px 0 #6C0900;
+	color:#c00;
+}
+/*客户端扫购有惊喜*/
+.ncs-goods-code{
+	width:100px;
+	height:120px;
+	position:absolute;
+	z-index:1;
+	top:12px;
+	right:12px;
+}
+.ncs-goods-code p{
+	vertical-align:middle;
+	text-align:center;
+	display:table-cell;
+	width:100px;
+	height:100px;
+	padding:0;
+	overflow:hidden;
+}
+.ncs-goods-code img{
+	max-width:100px;
+	max-height:100px;
+	margin-top:expression(100-this.height/2);
+}
+<!--地址-->
+.ncs-logistics{
+	position:relative;
+	z-index:2;
+}
+/*dl*/
+.ncs-freight{
+	padding:6px 0;
+}
+.ncs-freight dt{
+	line-height:28px;
+}
+/*地址框*/
+.ncs-freight_box{
+	position:relative;
+	z-index:80;
+}
+/*地址内容*/
+.ncs-freight-select{
+	height:28px;
+	float:left;
+	margin-right:6px;
+	position:relative;
+	z-index:3;
+}
+/*可见地址*/
+.ncs-freight-select .text{
+	line-height:26px;
+	background-color:#FFF;
+	height:26px;
+	float:left;
+	padding:0 20px 0 15px;
+	border:solid 1px #eee;
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+	cursor:pointer;
+}
+.ncs-freight-select:hover .text{
+	display:none;
+}
+.ncs-freight-select .text b{
+	font-size:0;
+	line-height:0;
+	background:url(../images/ncs_public_img.png) no-repeat -50px -100px;
+	display:block;
+	width:8px;
+	height:4px;
+	position:absolute;
+	top:10px;
+	right:6px;
+	overflow:hidden;
+}
+/*地址选择*/
+.ncs-freight-select:hover .close,.ncs-freight-select:hover .content{
+	display:block;
+}
+/*地址选择框*/
+.ncs-freight-select .content{
+	background-color:#FFF;
+	display:none;
+	width:512px;
+	padding:0;
+	border:1px solid #D7D7D7;
+	position:absolute;
+	z-index:2;
+	top:0;
+	left:0;
+	box-shadow:4px 4px 0 rgba(0,0,0,.05);
+}
+/*地址选择*/
+.ncs-freight-select .ncs-stock{
+	position:relative;
+}
+<!--地址选择顶部-->
+.ncs-freight-select .ncs-stock .tab{
+	background-color:#FAFAFA;
+	width:100%;
+	height:26px;
+	float:left;
+	border-bottom:solid 1px #eee;
+	overflow:visible;
+}
+.ncs-freight-select .ncs-stock .tab li{
+	float:left;
+	clear:none;
+	padding:0;
+}
+.ncs-freight-select .ncs-stock .tab .current a:hover,.ncs-freight-select .ncs-stock .tab a{
+	font-size:12px;
+	line-height:26px;
+	color:#999;
+	text-align:center;
+	float:left;
+	height:26px;
+	padding:0 15px 0 15px;
+	border-right: 1px solid #EEEEEE;
+	position:relative;
+	cursor:pointer;
+}
+.ncs-freight-select .ncs-stock .tab a:hover{
+	line-height:26px;
+	color:#000;
+	text-decoration:none;
+	background-color:#FFF;
+	height:26px;
+	padding:0 15px 1px 15px;
+	border-right: 1px solid #EEEEEE;
+}
+.ncs-freight-select .ncs-stock .tab a i{
+	font-size:0;
+	line-height:0;
+	background:url(../images/ncs_public_img.png) no-repeat -50px -100px;
+	vertical-align:middle;
+	display:inline-block;
+	width:8px;
+	height:4px;
+	margin-left:6px;
+}
+/*城市 地区*/
+.ncs-freight-select .ncs-stock .area-list{
+	display:block;
+	clear:both;
+	padding:10px 15px;
+	overflow:hidden;
+}
+.ncs-freight-select .ncs-stock .area-list li{
+	line-height:20px;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	width:112px;
+	height:20px;
+	padding:4px 0 4px 4px;
+	float:left;
+	overflow:hidden;
+}
+.ncs-freight-select .ncs-stock .area-list li a{
+	line-height:16px;
+	color:#555;
+	padding:2px 5px;
+}
+.ncs-freight-select .ncs-stock .area-list li a:hover{
+	color:#FFF;
+	text-decoration:none;
+	background-color:#FF875A;
+}
+/*关闭*/
+.ncs-freight-select .close{
+	font-size:12px;
+	line-height:20px;
+	display:none;
+	width:24px;
+	height:20px;
+	position:absolute;
+	z-index:2;
+	top:4px;
+	left:480px;
+	cursor:pointer;
+}
+/*加入购物车*/
+.ncs-buy{
+	display:block;
+	clear:both;
+	padding:20px 0 20px 30px;
+	position:relative;
+	z-index:1;
+}
+/*数量添加*/
+.ncs-figure-input{
+	vertical-align:top;
+	display:inline-block;
+	width:65px;
+	position:relative;
+	z-index:1;
+}
+.ncs-figure-input .input-text{
+	color:#333;
+	font-family:Tahoma;
+	font-size:16px;
+	font-weight:600;
+	line-height:41px;
+	text-align:center;
+	height:41px;
+	width:41px;
+	padding: 0;
+	border:solid 1px #eee;
+}
+.ncs-figure-input a{
+	font-size:0;
+	background-color:#FFF;
+	background:url(../images/ncs_public_img.png) no-repeat;
+	display:block;
+	width:20px;
+	height:20px;
+	border: 1px solid #EEEEEE;
+	border-left: none;
+	position:absolute;
+	z-index:1;
+	left:42px;
+}
+.ncs-figure-input a:hover{
+	color:#F32613;
+	text-decoration:none;
+}
+.ncs-figure-input .increase{
+	background-position:-100px -100px;
+	top:0;
+}
+.ncs-figure-input .decrease{
+	background-position:-120px -100px;
+	top:21px;
+}
+/*隐藏部分*/
+.ncs-point{
+	font-size:14px;
+	color:666;
+	background-color:#FFF7D1;
+	display:block;
+	height:24px;
+	padding:5px 9px;
+	border:solid 1px #E5DEBC;
+	position:absolute;
+	top:74px;
+	left:30px;
+	box-shadow:3px 3px 0 rgba(0,0,0,.1);
+}
+.ncs-point i{
+	background:url(../images/ncs_public_img.png) no-repeat -70px -100px;
+	display:block;
+	width:8px;
+	height:8px;
+	margin-top:-13px;
+	margin-left:8px;
+	margin-bottom:5px;
+}
+.ncs-point span{
+	line-height:24px;
+}
+.ncs-point span strong{
+	font-weight:600;
+	color:#FF5C4D;
+	margin:0 2px;
+}
+.ncs-point span a{
+	color:#06C;
+	text-decoration:underline;
+	margin:0 2px;
+}
+/*加入*/
+.ncs-goods-summary .ncs-btn{
+	vertical-align:top;
+	display:inline-block;
+	height:42px;
+	position:relative;
+	
+}
+.ncs-goods-summary .ncs-btn .addcart,.ncs-goods-summary .ncs-btn .buynow{
+	font:700 16px/32px "Microsoft Yahei";
+	color:#FFF;
+	text-align:center;
+	display:inline-block;
+	height:32px;
+	padding:5px 12px;
+	margin-right:5px;
+	border-radius:2px;
+	position:relative;
+	overflow:hidden;
+}
+/*加入购物车*/
+.ncs-goods-summary .ncs-btn .addcart{
+	background-color:#F32613;
+}
+.ncs-goods-summary .ncs-btn .addcart:hover {
+	background-color:#CF0010;
+}
+.ncs-goods-summary .ncs-btn a i{
+	background: url(../images/toolbar.png) no-repeat;
+	background-position: -7px -127px;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	position: relative;
+	top: 4px;
+	left: -7px;
+}
+/*立即购买*/
+.ncs-goods-summary .ncs-btn .buynow{
+	background-color:#BA7538;
+}
+.ncs-goods-summary .ncs-btn .buynow:hover{
+	background-color:#96602E;
+}
+/*焦点图上右*/
+.ncs-info{
+	width:210px;
+}
+/*标题*/
+.ncs-info .title{
+	background-color:#FFF;
+	padding:26px 10px;
+	text-align:center;
+	border:solid 1px #eee;
+}
+.ncs-info .title h4{
+	font:600 14px/20px "Microsoft Yahei";
+	color:#555;
+}
+/*描述,服务,物流*/
+.ncs-detail-rate{
+	width:182px;
+	padding:5px;
+	margin:0 auto;
+}
+.ncs-detail-rate ul{
+	font-size:0;
+	padding:5px 0;
+}
+.ncs-detail-rate li{
+	font-size:12px;
+	color:#333;
+	vertical-align:top;
+	text-align:center;
+	display:inline-block;
+	width:33.333%;
+	height:32px;
+}
+.ncs-detail-rate li h5{
+	color:#777;
+	line-height:16px;
+	height:16px;
+}
+.ncs-detail-rate li div{
+	line-height:16px;
+	height:16px;
+}
+.ncs-detail-rate li div i{
+	background:url(../images/grate.png) no-repeat;
+	vertical-align:middle;
+	display:inline-block;
+	width:16px;
+	height:16px;
+}
+.ncs-detail-rate .high{
+	color:#DA542E;
+}
+.ncs-detail-rate .high i{
+	background-position:0 -40px;
+}
+.ncs-detail-rate .equal{
+	color:#DA542E;
+}
+.ncs-detail-rate .equal i{
+	background-position:-32px -40px;
+}
+/*进入店铺,收藏店铺*/
+.ncs-info .btns{
+	font-size:0;
+	text-align:center;
+	padding-bottom:12px;
+	border-bottom:solid 1px #eee;
+}
+.ncs-info .btns a{
+	font-size:12px;
+	line-height:20px;
+	color:#333;
+	background-color:#F5F5F5;
+	vertical-align:top;
+	text-align:center;
+	display:inline-block;
+	height:20px;
+	padding:3px 10px;
+	border:solid 1px #CCC;
+}
+.ncs-info .btns a.goto{
+	color:#FFF;
+	background-color:#333;
+	border-color:#333;
+	margin-right:10px;
+}
+.ncs-info .btns a span{
+	line-height:20px;
+	color:#999;
+	margin-left:3px;
+}
+/*公司信息*/
+.ncs-info .content dl{
+	font-size:0;
+	display:block;
+	padding:4px 0;
+}
+.ncs-info .content dl dt{
+	font-size:12px;
+	color:#999;
+	vertical-align:top;
+	letter-spacing:normal;
+	word-spacing:normal;
+	text-align:right;
+	display:inline-block;
+	width:68px;
+}
+.ncs-info .content dl dd{
+	font-size:12px;
+	color:#333;
+	vertical-align:top;
+	letter-spacing:normal;
+	word-spacing:normal;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	display:inline-block;
+	width:130px;
+	overflow:hidden;
+}
+.ncs-info .content .detail-rate{
+	clear:both;
+}
+/*店铺热卖*/
+.ncs-recommend{
+	clear:both;
+	border:1px solid #ededed;
+	background:#fff;
+	width: 1200px;
+	min-width: 1200px;
+	margin: 10px auto;
+}
+.ncs-recommend .title{
+	margin:20px 25px 0;
+	border-left:2px solid #f55;
+	padding:0 0 1px 13px;
+}
+.ncs-recommend .title h4{
+	height:30px;
+	font:14px/30px "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+	color:#333;
+}
+.ncs-recommend .content{
+	overflow:hidden;
+}
+.ncs-recommend .content ul{
+	font-size:0;
+	padding:0 0 5px 0;
+	margin-left:-5px;
+	white-space: nowrap;
+}
+.ncs-recommend .content ul li{
+	display:inline-block;
+	padding:20px 22px 22px;
+	width:150px;
+}
+.content ul li dl{
+	font-size:0;
+	text-align:center;
+	width:100%;
+	margin:0 auto;
+	z-index:1;
+}
+.content ul li .goods-pic{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+.content ul li .goods-pic a{
+	width:150px;
+	height:150px;
+	display: block;
+}
+.content ul li .goods-pic a img{
+	max-width:150px;
+	max-height:150px;
+	margin-top:expression(150-this.height/2);
+	
+}
+.content ul li .goods-name a{
+    height: 36px;
+    width: 90%;
+    display: block;
+    overflow: hidden;
+    margin: 8px auto;
+	text-align: center;
+	white-space: pre-wrap;
+	line-height: 18px;
+	font-size:12px;
+	vertical-align:top;
+	letter-spacing:normal;
+	word-spacing:normal;
+}
+.content ul li .goods-price{
+    font-weight: 600;
+    color: #F32613;
+    height: 20px;
+    font-size: 18px;
+    font-family: Tahoma;
+}
+/*商品详情*/
+.ncs-goods-layout{
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.expanded .ncs-sidebar{
+    width: 210px;
+    display: block;
+    float: left;
+}
+/*<!--看了又看-->*/
+.ncs-sidebar-container {
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+.ncs-sidebar-container .title {
+    height: 32px;
+    padding: 0 10px;
+    border:1px solid #eee;
+}
+.ncs-sidebar-container .title h4 {
+    font: 14px/32px "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+    color: #333;
+}
+.shopwwi-look-look .content {
+    border: solid 1px #eee;
+    background: #FFF;
+    overflow: hidden;
+}
+.shopwwi-look-look .content ul{
+    font-size: 0;
+}
+.shopwwi-look-look .content ul li{
+    font-size: 12px;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    padding: 20px 22px 22px;
+    width: 163px;
+    border-bottom: dotted 1px #eee;
+}
+/*排行榜*/
+.ncs-top-tab {
+    padding: 0 15px;
+}
+.ncs-top-tab li{
+    float: left;
+}
+.ncs-top-tab li a{
+    float: left;
+    width: 84px;
+    height: 33px;
+    border-bottom: 1px solid #eee;
+    font: 14px/33px "Microsoft YaHei","\5FAE\8F6F\96C5\9ED1";
+    text-align: center;
+    cursor: pointer;
+}
+.ncs-top-tab li.current a {
+    border-bottom: 1px solid #f60;
+}
+.ncs-top-panel {
+    display: block;
+    margin: 1px;
+}
+.ncs-top-bar .hide {
+    display: none;
+}
+.ncs-top-panel{
+    display: block;
+    margin: 1px;
+}
+.ncs-top-panel li {
+    display: block;
+    padding: 8px 12px 8px 4px;
+    clear: both;
+    margin-top: -1px;
+    border-bottom: dashed 1px #E7E7E7;
+}
+.ncs-top-panel dl{
+    display: block;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+}
+.ncs-top-panel .panel-pic{
+    width: 62px;
+    height: 62px;
+    float: left;
+}
+.ncs-top-panel .panel-pic a{
+    border: solid 1px #E7E7E7;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+.ncs-top-panel dd{
+	float: left;
+}
+.ncs-top-panel .panel-name{
+    line-height: 16px;
+    width: 120px;
+    height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font: 12px/18px arial;
+    display: block;
+    padding-left: 8px;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    
+}
+.ncs-top-panel .panel-price{
+    line-height: 16px;
+    width: 110px;
+    height: 16px;
+    font-size:12px;
+    color: #B7B7B7;
+    padding-left: 8px;
+}
+.ncs-top-panel .panel-price em{
+	font: 700 14px/22px Verdana;
+    color: #f4214c;
+}
+.ncs-top-panel .panel-selled{
+    line-height: 16px;
+    width: 100px;
+    height: 16px;
+    font: 12px/18px arial;
+    padding: 7px 0 0 8px;
+}
+.ncs-top-panel .selled strong {
+    margin: 0 3px;
+    color: #c97;
+    font-weight: 700;
+}
+.ncs-top-panel .selled em{
+    padding-left: 8px;
+    color: #96602E;
+}
+.ncs-footer{
+	margin: 10px auto;
+    line-height: 38px;
+    color: #333;
+    text-align: center;
+    width: 128px;
+    height: 38px;
+    border-radius: 5px;
+    display:block;
+}
+/*商品详情*/
+.expanded .ncs-goods-main{
+	float:right;
+	width:970px;
+	background:#fff;
+	border:1px solid #eee;
+}
+.ncs-goods-title-nav{
+    margin-top: 0;
+    height: 40px;
+    overflow: hidden;
+}
+.ncs-goods-title-nav ul {
+    font-size: 0;
+    background-color: #FFF;
+    border-bottom: solid #eee 1px;
+    border-top: solid #eee 1px;
+    position: relative;
+}
+.ncs-goods-title-nav ul li {
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+}
+.ncs-goods-title-nav ul li a {
+    font: 400 14px/36px "Microsoft Yahei";
+    color: #777;
+    display: block;
+    padding: 0 15px;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 0 1px 0 0;
+}
+.ncs-goods-title-nav ul li a em{
+	font-size: 1em;
+	font-weight: 900;
+	color: red;
+}
+.ncs-goods-title-nav ul li.current {
+    margin: 0 0 -1px -1px;
+}
+.ncs-goods-title-nav ul li.current a {
+    color: #333;
+    padding: 0 30px;
+    border-style: solid;
+    border-color: #f55 #eee transparent #eee;
+    border-width: 2px 1px 0 1px;
+}
+/*添加到购物车*/
+.ncs-goods-title-nav .add-cart{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ncs-goods-title-nav .add-cart .addcart{
+	display:block;
+    height: 39px;
+    background: #F32613;
+    padding-left: 12px;
+    font:700 16px/32px "Microsoft Yahei";
+    line-height: 39px;
+    color: #fff;
+    font-weight: bold;
+    position:relative;
+    text-align: center;
+}
+.ncs-goods-title-nav .add-cart .addcart i{
+	background: url(../images/toolbar.png) no-repeat;
+	background-position: -7px -127px;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	position: relative;
+	top: 4px;
+	left: -7px;
+}
+/* <!-- S 加入购物车弹出提示框 -->*/
+.ncs-cart-popup{
+    background-color: #F5F5F5;
+    display: none;
+    width: 320px;
+    height: 120px;
+    border: solid 1px #eee;
+    box-shadow: 0 0 3px rgba(153,153,153,.25);
+    position: absolute;
+    z-index: 1;
+    top: 72px;
+    left: -200px;
+}
+.ncs-cart-popup dl dt {
+    font: lighter 16px/20px "Microsoft Yahei";
+    color: #333;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0 5px 0;
+}
+.ncs-cart-popup dl dt .addcart-colose{
+	font-size: 10px;
+	color: #AAB2BD;
+	float: right;
+	padding-right: 20px;
+}
+.ncs-cart-popup dl dd {
+    text-align: center;
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+.ncs-cart-popup dl dd strong{
+	font-weight: 900px;
+}
+.ncs-cart-popup dl dd em{
+	font-style: normal;
+}
+.ncs-cart-popup .btns a{
+	background-color: #CCD0D9;
+	font: 400 12px/20px "microsoft yahei",arial;
+	color: #FFF;
+	line-height: 16px;
+    height: 16px;
+    padding: 3px 7px;
+    border-radius: 2px;
+    text-align: center;
+    display: inline-block;
+}
+.ncs-cart-popup .btns a.current{
+	background-color: #48CFAE;
+}
+/*商品详情*/
+.nc-goods-sort li {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 23%;
+    padding: 0 0 0 2%;
+    margin: 0;
+    overflow: hidden;
+}
+.ncs-goods-info-content {
+    padding-bottom: 23px;
+}
+.ncs-goods-img-content{
+	 text-align: center;
+}
+.ncs-goods-img-content img{
+	vertical-align: top;
+}
+/*评价*/
+.ncs-goods-title-bar h4 {
+    font: 400 14px/20px "Microsoft Yahei";
+    color: #777;
+    display: block;
+    margin: 15px 15px 0 15px;
+    padding: 6px 15px 5px 15px;
+    border-left: 2px solid #f55;
+}
+.ncs-goods-info-content {
+    padding-bottom: 23px;
+}
+.ncs-goods-info-content .top {
+    padding: 9px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.ncs-comment .rate {
+    line-height: 20px;
+    color: #F32613;
+    display: inline-block;
+    margin: 10px 40px 10px 20px;
+    float: left;
+}
+.ncs-comment .rate strong {
+    font: lighter 40px/40px arial;
+    vertical-align: bottom;
+}
+.ncs-comment .rate sub {
+    font: 16px/20px arial;
+    vertical-align: bottom;
+    margin-right: 6px;
+}
+.ncs-comment .rate span {
+    color: #999;
+    display: block;
+    clear: both;
+}
+.ncs-comment .percent {
+    vertical-align: middle;
+    display: inline-block;
+    float: left;
+}
+.ncs-comment .percent dl {
+    font-size: 0;
+}
+.ncs-comment .percent dt {
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+}
+.ncs-comment .percent dt em {
+    color: #999;
+    margin-left: 4px;
+}
+.ncs-comment .percent dd {
+    background-color: #F5F5F5;
+    vertical-align: top;
+    display: inline-block;
+    width: 100px;
+    height: 14px;
+    margin: 3px 0;
+}
+.ncs-comment .percent dd i {
+    background-color: #F32613;
+    display: block;
+    height: 14px;
+}
+.ncs-comment .btns {
+	line-height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 60px;
+    padding-left: 30px;
+    margin-left: 300px;
+    border-left: dotted 1px #eee;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+}
+.ncs-comment .btns .ncbtn-grapefruit {
+    background-color: #ED5564;
+    height: 20px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: inline-block;
+}
+.ncs-comment .btns .ncbtn-grapefruit img{
+	margin-top: 5px;
+}
+/*销售记录*/
+.ncg-salelog .price {
+    background-color: #FFF;
+    color: #F60;
+    font-weight: 600;
+}
+.ncg-salelog .price strong {
+    font: 600 14px/20px arial;
+    color: #F32613;
+    margin: 0 4px;
+}
+.ncg-salelog .price span {
+    line-height: 16px;
+    color: #FFF;
+    background-color: #C8C8C8;
+    vertical-align: middle;
+    display: inline-block;
+    height: 16px;
+    padding: 1px 4px;
+    margin-left: 20px;
+}

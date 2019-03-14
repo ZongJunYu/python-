@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>汉购网-详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/base.css">
+		<link rel="stylesheet" type="text/css" href="../css/details.css">
+		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/details.js"></script>
+	</head>
+	<body>
+		<!--顶部-->
+		<div class="public-top-layout w">
+			<div class="topbar wrapper"> 
+				<!--顶部标题左侧-->
+				<div class="user-entry">
+					<!--登录后的-->
+					<div id="user-info" style="display: none;">
+						您好 <span> <a href="#" id="top-username"></a></span>  <!--显示用户名   个人中心-->
+						，欢迎来到 <a href="#" title="首页" alt="首页"><span>汉购网</span></a> <span>[<a href="#">退出</a>]</span>
+					</div>
+					<!--登录前的-->
+					<div id="user-login">
+						您好，欢迎来到	<a href="#" title="首页" alt="首页">汉购网</a>
+						<span class="login-link"><a href="login.html">请登录</a></span> 
+						<span class="login-link"><a href="register.html">立即注册</a></span>
+					</div>
+				</div>
+				
+				<!--顶部标题右侧-->
+				<div class="quick-menu">
+					<dl>
+						<dt><em class="ico_shop"></em>
+						<a href="#">商家入驻</a></dt>
+					</dl>
+					<dl>
+						<dt><em class="ico_order"></em><a href="#">我的订单</a><i></i></dt>
+						<dd>
+							<ul>
+								<li><a href="#">待付款订单</a></li>
+								<li><a href="#">待确认收货</a></li>
+								<li><a href="#">待评价交易</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt><em class="ico_center"></em><a href="#">个人中心</a></dt>
+					</dl>
+					<dl>
+						<dt><em class="ico_service"></em>客户服务<i></i></dt>
+						<dd>
+							<ul>
+								<li><a href="#">帮助中心</a></li>
+								<li><a href="#">售后服务</a></li>
+								<li><a href="#">客服中心</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="weixin">
+						<dt>关注我们<i></i></dt>
+						<dd>
+							<h4>扫描二维码<br/>关注商城微信号</h4>
+							<img src="../images/WeChatQR code.png"> 
+						</dd>
+					</dl>
+				</div> 
+			</div>
+		</div>
+		
+		<!-- PublicHeadLayout Begin -->
+		<!--头部-->
+		<div class="header-wrap">
+		  <header class="public-head-layout wrapper">
+		    <h1 class="site-logo">
+		    	<a href="#"><img src="../images/logo.jpg"></a>
+		    </h1>
+		    <div class="head-search-layout">
+		    	<!--搜索框-->
+		    	<div class="head-search-bar" id="head-search-bar">
+			        <form action="" method="" class="search-form" id="top_search_form">
+			          <input type="text" class="input-text" placeholder="农谷鲜"/>
+			          <input type="submit"  value="" class="input-submit" />
+			        </form>
+			    	<!--历史搜索-->
+			        <div class="search-tip" id="search-tip">
+			          <!--历史记录-->
+			            <div class="search-history">
+			            	<div class="title"><span>历史纪录</span><a href="#" id="search-his-del">清除</a></div>
+		            		<ul id="search-his-list"></ul>
+		            	</div>
+			            <!--热门搜索-->
+			        	<div class="search-hot">
+				        	<div class="title"><span>热门搜索...</span></div>
+				            <ul>
+		                    	<li><a href="#">农谷鲜</a></li>
+		                    </ul>
+			        	</div>
+			        </div>
+			    </div>
+		        <div class="keyword">
+			        <ul>
+	                    <li><a href="#">鸡蛋</a></li>
+	                    <li><a href="#">豆皮</a></li>
+	                    <li><a href="#">啤酒</a></li>
+	                    <li><a href="#">苹果</a></li>
+	                    <li><a href="#">土豆</a></li>
+	                    <li><a href="#">米</a></li>
+	                    <li><a href="#">油</a></li>
+	                    <li><a href="#">热干面</a></li>
+	                    <li><a href="#">龙虾</a></li>
+	                    <li><a href="#">锅巴</a></li>
+	                    <li><a href="#">罐头</a></li>
+	                    <li><a href="#">夏橙</a></li>
+	                </ul>
+		        </div>
+		    </div>
+			<div class="advantage">  
+				<ul>
+					<li>100%正品  真品真实惠</li>
+					<li>产地直供  原汁原味</li>
+					<li>优质配送</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--顶部导航-->
+		<nav class="public-nav-layout ">
+			<div class="wrapper">
+				<!--全部分类-->
+		    	<div class="all-category">
+		    		<!--全部分类-->
+		    		<div class="title">
+		    			<h3><a href="#">全部分类</a></h3><i></i>
+					</div>
+					<!--下拉分类-->
+					<div class="category">
+		    			<ul class="menu">
+	                        <li>
+			                    <div class="class">
+			                        <span class="ico"><img src="../images/category1.png" width="16" height="16"></span>
+			                        <h4><a href="#">生鲜水果</a></h4>
+			                    </div>
+			                    <div class="sub-class">
+			                        <div class="sub-class-content">
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">肉类</a></h3>
+	                                        </dt>
+	                                        <dd>                                                                                      <a href="http://www.hangowa.com/?act=search&amp;keyword=%E7%BE%8A%E8%82%89">羊肉</a>
+		                                        <a href="#">羊肚</a>
+		                                        <a href="#">羊腿</a>
+		                                        <a href="#">羊腰子</a>
+		                                        <a href="">牛肉</a>
+		                                        <a href="#">兔肉</a>
+			                                </dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">水果</a></h3>
+	                                        </dt>
+	                                        <dd>                                                                                     <a href="http://www.hangowa.com/?act=search&amp;keyword=%E7%8C%95%E7%8C%B4%E6%A1%83">猕猴桃</a>
+	                                            <a href="#">榴莲</a>
+	                                            <a href="#">柑橘</a>
+	                                            <a href="#">西柚</a>
+	                                            <a href="#">石榴</a>
+	                                            <a href="#">苹果</a>
+	                                            <a href="#">梨子</a>
+	                                            <a href="#">橙子</a>
+	                                            <a href="#">地瓜</a>
+	                                		</dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">海鲜/水产品</a></h3>
+	                                        </dt>
+			                                <dd>
+			                                	<a href="#">大闸蟹</a>
+		                                        <a href="#">龙虾</a>
+			                                </dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">蔬菜</a></h3>
+	                                        </dt>
+	                                        <dd>
+	                                        	<a href="#">土豆</a>
+			                                    <a href="#">什锦蔬菜</a>
+			                                </dd>
+			                            </dl>
+			                        </div>
+			                    </div>
+			                    <div class="menu-right"></div>
+	                		</li>
+		                    <li>
+		                    	<div class="class">
+		                            <span class="ico"><img src="../images/category2.png" width="16" height="16"></span>
+		                            <h4><a href="#">蛋奶速食</a></h4>
+		                    	</div>
+		                        <div class="sub-class">
+		                        	<div class="sub-class-content">
+		                                <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">方便速食</a></h3>
+	                                        </dt>
+	                                        <dd>
+		                                        <a href="#">罐头</a>
+		                                        <a href="#">方便主食</a>
+		                                    </dd>
+		                                </dl>
+		                                <dl>
+		                                    <dt>
+		                                       <h3><a href="#">蛋类</a></h3>
+		                                    </dt>
+		                                    <dd>
+                                                <a href="#">土鸡蛋</a>
+                                                <a href="#">咸鸭蛋</a>
+                                            </dd>
+		                                </dl>
+		                            </div>
+		                        </div>
+		                        <div class="menu-right"></div>
+		                	</li>
+		                    <li>
+		                    	<div class="class">
+		                            <span class="ico"><img src="../images/category3.png" width="16" height="16"></span>
+		                            <h4><a href="#">休闲零食</a></h4>
+		                    	</div>
+		                        <div class="sub-class">
+			                        <div class="sub-class-content">
+			                            <dl>
+		                                    <dt>
+		                                    	<h3><a href="#">肉类零食</a></h3>
+		                                    </dt>
+			                                <dd>                                                                                                              <a href="http://www.hangowa.com/?act=search&amp;keyword=%E8%8C%B6%E9%A6%99%E9%B8%A1">茶香鸡</a>
+		                                        <a href="#">郭河醉鱼</a>
+		                                        <a href="#">清江野鱼</a>
+		                                        <a href="#">鸭锁骨</a>
+		                                        <a href="#">鸭翅</a>
+		                                        <a href="#">鸭脖</a>
+		                                        <a href="#">茶香鸭</a>
+		                        			</dd>
+	                                    </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">糕点</a></h3>
+	                                        </dt>
+	                                        <dd>
+			                                    <a href="#">月饼</a>
+	                                            <a href="#">曲奇饼干</a>
+	                                            <a href="#">香酥</a>
+	                                            <a href="#">奶酪薄饼</a>
+			                                </dd>
+			                            </dl>
+			                        </div>
+			                    </div>
+			                    <div class="menu-right"></div>
+			                </li>
+			                <li>
+			                    <div class="class">
+			                        <span class="ico"><img src="../images/category4.png" width="16" height="16"></span>
+			                        <h4><a href="#">粮油杂货</a></h4>
+			                    </div>
+			                    <div class="sub-class">
+			                        <div class="sub-class-content">
+			                            <div class="recommend-class">
+			                                <span><a href="#">食用油</a></span>
+	                                        <span><a href="#">挂面</a></span>
+	                                        <span><a href="#">大米</a></span>
+	                                        <span><a href="#">粗粮</a></span>
+			                            </div>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">粮油</a></h3>
+	                                        </dt>
+	                                    	<dd>
+			                                    <a href="#">食用油</a>
+	                                            <a href="#">挂面</a>
+	                                            <a href="#">大米</a>
+	                                            <a href="#">粗粮</a>
+	                                            <a href="#">国宝桥米</a>
+	                                            <a href="#">福临门</a>
+	                                            <a href="#">金龙鱼</a>
+	                                            <a href="#">万星</a>
+	                                            <a href="#">亚象</a>
+	                                            <a href="#">福达坊</a>
+	                                            <a href="#">鲁花</a>
+	                                		</dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">干货</a></h3>
+	                                        </dt>
+	                                        <dd>
+	                                            <a href="#">枣类</a>
+	                                            <a href="#">干菜</a>
+	                                            <a href="#">木耳</a>
+	                                            <a href="#">食用菌</a>
+	                                            <a href="#">菇类</a>
+	                                		</dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">调味品</a></h3>
+	                                        </dt>
+	                                        <dd>
+			                                    <a href="#">酱料</a>
+			                                </dd>
+			                            </dl>
+			                        </div>
+			                    </div>
+			                    <div class="menu-right"></div>
+			                </li>
+			                <li>
+			                    <div class="class">
+	                                <span class="ico"><img src="../images/category5.png" width="16" height="16"></span>
+	                                <h4><a href="#">酒水饮品</a></h4>
+			                    </div>
+			                    <div class="sub-class">
+			                        <div class="sub-class-content">
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">茗茶</a></h3>
+	                                        </dt>
+	                                        <dd>
+	                                            <a href="#">红茶</a>
+	                                            <a href="#">水果茶/果味茶</a>
+	                                            <a href="#">绿茶</a>
+	                                            <a href="#">花草茶</a>
+	                                		</dd>
+			                            </dl>
+			                            <dl>
+	                                        <dt>
+	                                        	<h3><a href="#">冲调谷物/饮品</a></h3>
+	                                        </dt>
+	                                        <dd>
+			                                    <a href="#">冲饮品</a>
+			                                </dd>
+			                            </dl>
+			                        </div>
+			                    </div>
+			                    <div class="menu-right"></div>
+			                </li>
+		            	</ul>
+					</div>
+				</div>
+				<!--头部右导航-->
+			    <ul class="site-menu">
+			        <li><a href="index.html" class="current"><span>首页</span></a></li>
+			        <li><a href="#">土道家</a></li>
+			        <li><a href="#"> 森林特产</a></li>
+			        <li><a href="#">农谷鲜</a></li>
+			        <li class="nav_new"><a href="#">醉美鹤峰土家购</a></li>
+			        <li class="nav_new"><a href="#">保康特色馆</a></li>
+			    </ul>
+				<div class="con-cart">
+				    <a href="#" class="cart-btn">
+			            <i class="cart-icon"></i> 
+						<em class="cart-num">0</em>
+						<span>购物车</span>
+					</a>
+				</div> 
+		    </div>
+		</nav>
+		<!------------------------------焦点图 ------------------------------------>
+		<div class="wrapper pr">
+			<!-- 焦点图上 -->
+			<div class="ncs-detail">
+				<!-- 放大镜左-->
+				<div class="ncs-goods-picture">
+					<!--中图-->
+			    	<div class="gallery_wrap">
+				        <div class="smallImg">
+				        	<img src="" >
+				        	<div class="smallArea"></div>	
+				        </div>
+				    </div>
+		            <!--小图-->
+			        <div class="controller_wrap">
+				        <div class="controller">
+				           <ul id="smllList">
+				           		<li class="current-controller"><img src="" data-msrc= "" data-bsrc = "" ></li>
+				           		<li><img src=""  data-msrc= ""  data-bsrc = "" ></li>
+				           		<li><img src=""  data-msrc= ""  data-bsrc = "" ></li>
+				           		<li><img src=""  data-msrc= ""  data-bsrc = "" ></li>
+			               </ul>
+				        </div>
+		        	</div>
+		        	<div class="bigArea">
+		        		<img src="" class="bigImg"/>
+		        	</div>
+			    </div>
+			    <!--商品图片及收藏分享 -->
+				<div class="ncs-handle"> 
+				    <a href="#">分享(0)</a> 
+				    <a href="#">收藏商品(0)</a>
+				    <a href="#"><i></i>加入对比</a>
+				    <a href="#">举 报</a>
+				</div>
+				<!--焦点图上中-->
+			    <div class="ncs-goods-summary">
+			        <div class="name" id="titlname">
+			            <h1 id="detailstitle"></h1>
+			            <strong></strong>
+			        </div>
+			        <!--价格-->
+	           		<div class="ncs-meta">
+		                <dl>
+			                <dt>市&nbsp;&nbsp;场&nbsp;&nbsp;价：</dt>
+			                <dd class="cost-price">
+			                    <strong><em id="unit"></em><span id="original"></span></strong>
+			                </dd>
+		                </dl>
+			            <dl>
+			                <dt>商&nbsp;&nbsp;城&nbsp;&nbsp;价：</dt>
+			                <dd class="price">
+			                   <strong><em id="punit"></em><span id="price"></span></strong>
+			                </dd>
+			            </dl>
+		                <dl class="rate">
+		                    <dt>商品评分：</dt>
+		                    <dd><span></span><a href="#">共有<em id="evaluate"></em>条评价</a></dd>
+		                </dl>
+	                    <div class="ncs-goods-code">
+	                  		<p><img src="../images/clientQR.png"></p>
+	                  		<span><i></i>客户端扫购有惊喜</span>
+	                    </div>
+	          		</div>
+	          		<!--地址-->
+	      			<div class="ncs-logistics">
+	                	<dl class="ncs-freight">
+	          				<dt>配&nbsp;&nbsp;送&nbsp;&nbsp;至：</dt>
+	          				<dd class="ncs-freight_box">
+	            				<div class="ncs-freight-select">
+				              		<div class="text">
+				                		<div>北京北京市东城区</div>
+				                		<b></b>
+				              		</div>
+	                				<div class="content">
+	                					<div class="ncs-stock" >
+	                						<!--地址顶部-->
+	                  						<div class="mt">
+							                    <ul class="tab">
+							                      <li class="curr"><a href="#" ><em>北京</em><i> ∨</i></a></li>
+							                      <li><a href="#" ><em>北京市</em><i> ∨</i></a></li>
+							                      <li><a class="hover" href="#"><em>东城区</em><i> ∨</i></a></li>
+							                    </ul>
+	                  						</div>
+	                  						<div class="close">
+	                  							<!--关闭-->
+				              					<a href="#">关闭</a>
+	                  						</div>
+	                  						<!--地址底部-->
+						                  	<div style="display: none;">
+						                    	<ul class="area-list">
+						                    		<li><a href="#">北京</a></li>
+						                    		<li><a href="#">天津</a></li>
+						                    		<li><a href="#">河北</a></li>
+						                    		<li><a href="#">山西</a></li>
+						                    		<li><a href="#">内蒙古</a></li>
+						                    		<li><a href="#">辽宁</a></li>
+						                    		<li><a href="#">吉林</a></li>
+						                    		<li><a href="#">黑龙江</a></li>
+						                    		<li><a href="#">上海</a></li>
+						                    		<li><a href="#">江苏</a></li>
+						                    		<li><a href="#">浙江</a></li>
+						                    		<li><a href="#">安徽</a></li>
+						                    		<li><a href="#">福建</a></li>
+						                    		<li><a href="#">江西</a></li>
+						                    		<li><a href="#">山东</a></li>
+						                    		<li><a href="#">河南</a></li>
+						                    		<li><a href="#">湖北</a></li>
+						                    		<li><a href="#">湖南</a></li>
+						                    		<li><a href="#">广东</a></li>
+						                    		<li><a href="#">广西</a></li>
+						                    		<li><a href="#">海南</a></li>
+						                    		<li><a href="#">重庆</a></li>
+						                    		<li><a href="#">四川</a></li>
+						                    		<li><a href="#">贵州</a></li>
+						                    		<li><a href="#">云南</a></li>
+						                    		<li><a href="#">西藏</a></li>
+						                    		<li><a href="#">陕西</a></li>
+						                    		<li><a href="#">甘肃</a></li>
+						                    		<li><a href="#">青海</a></li>
+						                    		<li><a href="#">宁夏</a></li>
+						                    		<li><a href="#">新疆</a></li>
+						                    	</ul>
+						                 	</div>
+							                <div style="display: none;">
+							                    <ul class="area-list">
+							                    	<li><a href="#">北京市</a></li>
+							                    </ul>
+							                </div>
+						                    <div>
+						                    	<ul class="area-list">
+						                    		<li><a href="#">东城区</a></li>
+						                    		<li><a href="#">西城区</a></li>
+						                    		<li><a href="#">朝阳区</a></li>
+						                    		<li><a href="#">丰台区</a></li>
+						                    		<li><a href="#">石景山区</a></li>
+						                    		<li><a href="#">海淀区</a></li>
+						                    		<li><a href="#">门头沟区</a></li>
+						                    		<li><a href="#">房山区</a></li>
+						                    		<li><a href="#">通州区</a></li>
+						                    		<li><a href="#">顺义区</a></li>
+						                    		<li><a href="#">昌平区</a></li>
+						                    		<li><a href="#">大兴区</a></li>
+						                    		<li><a href="#">怀柔区</a></li>
+						                    		<li><a href="#">平谷区</a></li>
+						                    		<li><a href="#">密云县</a></li>
+						                    		<li><a href="#">延庆县</a></li>
+						                    		<li><a href="#">其他</a></li>
+						                    	</ul>
+						                  	</div>
+	                					</div>
+						            </div>
+				              	</div>
+					            <div style="line-height: 28px; color: #999999; float: left;"> 
+					            	<strong style="font-size: 16px; color: red; margin: 0 8px;">有货 </strong><span>免运费</span>
+					            </div>
+							</dd>
+						</dl>
+					</div>
+	      			<!-- S 购买数量及库存 -->
+	      			<div class="ncs-buy">
+	      				<!--数量-->
+	        			<div class="ncs-figure-input">
+	          				<input value="1"  class="input-text" type="text">
+	          				<a href="#" class="increase">&nbsp;</a> 
+	          				<a href="#" class="decrease" >&nbsp;</a> 
+	        			</div>
+	    				<div class="ncs-point" style="display: none;">
+	    					<i></i>
+	          				<span>您选择的商品库存<strong id="repertory">479255</strong>件</span> 
+	                   	</div>
+	        			<div class="ncs-btn">
+	          				<a href="#" class="addcart" title="加入购物车" id="detailsadd">
+	          					<i></i>加入购物车
+	          				</a>
+	          				<a href="#" class="buynow" title="立即购买">立即购买</a>
+	    				</div>
+					</div>
+				</div>
+				<!--焦点图上右-->
+				<!--店铺基本信息 S-->
+				<div style="position: absolute; z-index: 2; top: -1px; right: -1px;">
+					<div class="ncs-info">
+						<div class="title">
+						   <h4><a href="#">荆门众邦特色馆</a></h4>
+						</div>
+						<div class="content">
+					        <div class="ncs-detail-rate">
+						        <ul>
+						            <li>
+						          		<h5>描述</h5>
+					          			<div class="high" title="高于2%">4.7<i></i></div>
+						        	</li>
+					                <li>
+							          	<h5>服务</h5>
+							          	<div class="equal" title="持平----">4.7<i></i></div>
+							        </li>
+					                <li>
+							          	<h5>物流</h5>
+							          	<div class="equal" title="持平----">4.7<i></i></div>
+							        </li>
+					            </ul>
+						    </div>    
+    						<div class="btns">
+    							<a href="#" class="goto">进店逛逛</a>
+    							<a href="#">收藏店铺<span>(<em>15</em>)</span></a>
+    						</div>
+    
+						    <dl>
+						      	<dt>公司名称：</dt>
+						      	<dd>荆门众邦云商服务有限公司</dd>
+						    </dl>
+                      	</div>
+					</div>
+  				</div>
+			</div>
+		<!--分界线-->
+		</div>
+		<!-----------------------------侧边栏-------------------------->
+		<div class="nc-appbar">
+			<div class="nc-appbar-tabs">
+				<div class="ever">
+					<!--购物车-->
+					<div class="cart">
+						<a href="cart.html">
+							<span class="icon"></span> 
+							<span class="name">购物车</span>
+							<i>3</i>
+						</a>
+					</div>
+				</div>
+				<div class="variation">
+					<div class="middle">
+						<!--我的账户-->
+						<div id="bar-user-info">
+							<div class="user">
+								<!--我的账户-->
+								<a href="#">
+									<div class="avatar">
+										<img src="../images/default_user_portrait.gif">
+									</div>
+									<span class="tit">我的账户</span>
+								</a>
+							</div>
+							<!--我的账户，点击-->
+							<div class="user-info" style="display:none;">
+								<i class="arrow"></i>
+								<div class="avatar">
+									<img src="../images/default_user_portrait.gif">
+									<div class="frame"></div>
+								</div>
+								<dl>
+									<dt>Hi, <span>yeli</span></dt>
+									<dd>当前等级：<strong>V0</strong></dd>
+									<dd>当前经验值：<strong>15</strong></dd>
+								</dl>
+							</div>
+						</div>
+						<!--微信-->
+						<div class="chat">
+							<a href="#">
+								<span class="icon"></span>
+								<i style="display:none;"></i>
+								<span class="tit">在线联系</span>
+							</a>
+						</div>
+					</div>
+					<!--二维码-->
+					<div class="l_qrcode">
+						<a href="#">
+							<span class="icon"></span>
+							<code><img src="../images/WeChatQR code.png"></code>
+						</a>
+					</div>
+					<!--退回顶部-->
+					<div class="gotop">
+						<a href="#" style="display: block;">
+							<span class="icon"></span>
+							<span class="tit">返回顶部</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--店铺热卖-->
+		<div class="ncs-recommend">
+	      	<div class="title">
+	        	<h4>店铺热卖</h4>
+	      	</div>
+	      	<div class="content">
+		        <ul>
+		            <li>
+			            <dl>
+			            	<dt class="goods-pic">
+			              		<a href="#"><img src="../images/lweb-2.jpg"></a>
+			              	</dt>
+			              	<dd class="goods-name">
+			              		<a href="#">豆丝豆折豆粑豆皮湖北特产黄豆豆丝柴火灶做无添加手工豆丝1kg装</a>
+			              	</dd>
+			              	<dd class="goods-price">¥17.50</dd>
+			            </dl>
+		          	</li>
+		          	<li>
+			            <dl>
+			            	<dt class="goods-pic">
+			              		<a href="#"><img src="../images/lweb-2.jpg"></a>
+			               </dt>
+			               <dd class="goods-name">
+			              		<a href="#">豆丝豆折豆粑豆皮湖北特产黄豆豆丝柴火灶做无添加手工豆丝1kg装</a>
+			              	</dd>
+			              	<dd class="goods-price">¥17.50</dd>
+			            </dl>
+		          	</li>
+		        </ul>
+	        	<div class="clear"></div>
+	      	</div>
+    	</div>
+    	<!--///////////-->
+    	<div class="ncs-goods-layout expanded">
+    		<div class="ncs-sidebar">
+    			<!--看了又看-->
+				<div class="ncs-sidebar-container shopwwi-look-look">
+			      	<div class="title">
+			        	<h4>看了又看</h4>
+			      	</div>
+			      	<div class="content">
+			        	<ul>
+				          	<li>
+				            	<dl>
+				            		<dt class="goods-pic"><a href="#"><img src="../images/lweb-2.jpg"></a></dt>
+					              	<dd class="goods-name"><a href="#">湖北沙洋特产特级无公害再生稻生态大米 高营养米10斤装包邮</a></dd>
+					              	<dd class="goods-price">¥56.90</dd>
+				            	</dl>
+			          		</li>
+			          		<li>
+				            	<dl>
+					              	<dt class="goods-pic"><a href="#"><img src="../images/lweb-2.jpg"></a></dt>
+					              	<dd class="goods-name"><a href="#">湖北沙洋特产特级无公害再生稻生态大米 高营养米10斤装包邮</a></dd>
+					              	<dd class="goods-price">¥56.90</dd>
+				            	</dl>
+			          		</li>
+			           	</ul>
+			        </div>
+			        <div class="clear"></div>
+			   	</div>
+		       	<!-- 商品排行-->
+		       	<div class="ncs-sidebar-container ncs-top-bar">
+				 	<div class="title">
+				    	<h4>商品排行</h4>
+				  	</div>
+				 	<div class="content">
+				    	<ul class="ncs-top-tab">
+				      		<li><a href="#">热销TOP5</a></li>
+				      		<li class="current"><a href="#">人气TOP5</a></li>
+				    	</ul>
+				    </div>
+				    <!--热销排行榜-->
+				    <div class="ncs-top-panel hide">
+			            <ol>
+			                <li>
+					          	<dl>
+					          		<dt class="panel-pic">
+						            	<a href="#"><img src="../images/lweb-1.jpg"></a>
+								 	</dt>
+						            <dd>
+						            	<p class="panel-name"><a href="#">PDD 特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜</a></p>
+						            	<p class="panel-price">￥<em>39.00</em></p>
+						                <p class="panel-selled">售出：<strong>554116</strong>笔</p>
+						            </dd>
+					          	</dl>
+		        			</li>
+      					</ol>
+            		</div>
+		            <!--人气收藏榜-->
+		            <div class="ncs-top-panel">
+		            	<ol>
+		                	<li>
+		          				<dl>
+					          		<dt class="panel-pic">
+						            	<a href="#"><img src="../images/lweb-1.jpg"></a>
+								 	</dt>
+						            <dd>
+						            	<p class="panel-name"><a href="#">PDD 特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜</a></p>
+						            	<p class="panel-price">￥<em>39.00</em></p>
+						                <p class="panel-selled">收藏人气：<em>5</em></p>
+						            </dd>
+					          	</dl>
+					        </li>
+					        <li>
+		          				<dl>
+					          		<dt class="panel-pic">
+						            	<a href="#"><img src="../images/lweb-1.jpg"></a>
+								 	</dt>
+						            <dd>
+						            	<p class="panel-name"><a href="#">PDD 特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜</a></p>
+						            	<p class="panel-price">￥<em>39.00</em></p>
+						            </dd>
+					          	</dl>
+					        </li>
+				 		</ol>
+          			</div>
+    				<p><a href="#" class="ncs-footer">查看本店其他商品</a></p>
+  				</div>
+				<!--最近浏览-->
+				<div class="ncs-sidebar-container ncs-top-bar">
+				    <div class="title">
+				        <h4>最近浏览</h4>
+				    </div>
+				    <div class="content">
+				        <div class="ncs-top-panel">
+			            	<ol>
+			                	<li>
+			          				<dl>
+						          		<dt class="panel-pic">
+							            	<a href="#"><img src="../images/lweb-1.jpg"></a>
+									 	</dt>
+							            <dd>
+							            	<p class="panel-name"><a href="#">PDD 特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜</a></p>
+							            	<p class="panel-price">￥<em>39.00</em></p>
+							            </dd>
+						          	</dl>
+						        </li>
+						        <li>
+			          				<dl>
+						          		<dt class="panel-pic">
+							            	<a href="#"><img src="../images/lweb-1.jpg"></a>
+									 	</dt>
+							            <dd>
+							            	<p class="panel-name"><a href="#">PDD 特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜</a></p>
+							            	<p class="panel-price">￥<em>39.00</em></p>
+							            </dd>
+						          	</dl>
+						        </li>
+					 		</ol>
+	          			</div>
+          				<p><a href="#" class="ncs-footer">查看本店其他商品</a></p>
+			   		</div>
+    			</div>	
+    		</div>
+    		<!-------------------商品详情---------------->
+    		<div class="ncs-goods-main">
+    			<div class="tabbar">
+    				<!--主要导航-->
+      				<div class="ncs-goods-title-nav">
+        				<ul>
+          					<li class="current"><a href="#">商品详情</a></li>
+                    		<li><a href="#">商品评价<em>(4)</em></a></li>
+				          	<li><a href="#">销售记录<em>(15240)</em></a></li>
+				          	<li><a href="#">购买咨询</a></li>
+				        </ul>
+        				<div class="add-cart" style="display: block;">
+        					<a href="#" class="addcart" title="加入购物车">
+	          					<i></i>加入购物车
+	          				</a>
+           					 <!-- S 加入购物车弹出提示框 -->
+				          	<div class="ncs-cart-popup">
+				            	<dl>
+				              		<dt>成功添加到购物车<a href="#" class="addcart-colose">X</a></dt>
+				              		<dd>购物车共有 <strong class="bold_num">2</strong> 种商品 总金额为：<em class="bold_mly" id="price">￥<i id="price"></i></em></dd>
+				              		<dd class="btns">
+				              			<a href="#" class="current">查看购物车</a>
+				              			<a href="#">继续购物</a>
+				              		</dd>
+				            	</dl>
+				          	</div>
+        				</div>  
+        				<div class="switch-bar"><a href="#">&nbsp;</a></div>
+      				</div>
+    			</div>
+    			<!--详情-->
+	    		<div class="ncs-intro">
+	      			<div class="content bd">
+	                	<ul class="nc-goods-sort">
+				          	<li>商家货号：</li>
+				          	<li>品牌：农谷鲜</li>                            
+	                	</ul>
+	                	<div class="ncs-goods-img-content">
+                    		<img src="">
+                    		<img src="">
+                    		<img src="">
+                    		<img src="">
+                    		<img src="">	
+                    		<img src="">	
+                    		<img src="">
+                			<img src="">
+	                  	</div>
+	      			</div>
+	    		</div>
+	    		<!--商品评价-->
+	        	<div class="ncs-comment">
+				    <div class="ncs-goods-title-bar">
+				        <h4><a href="#">商品评价</a></h4>
+				    </div>
+	      			<div class="ncs-goods-info-content">
+	        			<div class="top">
+	          				<div class="rate">
+					            <p><strong>93</strong><sub>%</sub>好评</p>
+					            <span>共有4人参与评分</span>
+	          				</div>
+					        <div class="percent">
+					            <dl>
+					              	<dt>好评<em>(100%)</em></dt>
+					              	<dd><i style="width: 93%"></i></dd>
+					            </dl>
+					            <dl>
+					              	<dt>中评<em>(0%)</em></dt>
+					              	<dd><i style="width: 2%"></i></dd>
+					            </dl>
+					            <dl>
+					              	<dt>差评<em>(0%)</em></dt>
+					              	<dd><i style="width: 5%"></i></dd>
+					            </dl>
+			          		</div>
+				          	<div class="btns">
+				          		<span>您可对已购商品进行评价</span>
+				            	<p>
+				            		<a href="#" class="ncbtn-grapefruit" >
+					            		<img src="../images/pinglun.png" />
+					            		评价商品
+				            		</a>
+				            	</p>
+				          	</div>
+       					</div>
+				        <div class="ncs-goods-title-nav">
+				          	<ul>
+				            	<li class="current"><a href="#">商品评价(4)</a></li>
+					            <li><a href="#">好评(4)</a></li>
+					            <li><a href="#">中评(0)</a></li>
+					            <li><a href="#">差评(0)</a></li>
+				         	</ul>
+				        </div>
+				        <!-- 商品评价内容部分 -->
+				        <div class="ncs-commend-main"></div>
+    				</div>
+				</div>
+				<!--销售记录-->
+			    <div class="ncg-salelog">
+			      	<div class="ncs-goods-title-bar hd">
+			        	<h4><a href="#">销售记录</a></h4>
+			      	</div>
+			      	<div class="ncs-goods-info-content bd">
+			        	<div class="top">
+				          	<div class="price">
+				          		商&nbsp;&nbsp;城&nbsp;&nbsp;价<strong>27.90</strong>元
+				          		<span>购买的价格不同可能是由于店铺往期促销活动引起的，详情可以咨询卖家</span>
+				          	</div>
+			        	</div>
+		   			</div>
+				</div>
+				<!--购买咨询-->
+			    <div class="ncs-consult">
+				    <div class="ncs-goods-title-bar hd">
+				        <h4><a href="javascript:void(0);">购买咨询</a></h4>
+				    </div>
+			      	<div class="ncs-goods-info-content bd"> 
+				        <!-- 咨询留言内容部分 -->
+				        <div id="consulting_demo" class="ncs-loading"></div>
+			    	</div>
+			    </div>
+			</div>
+ 		</div>
+		<!--底部-->
+		<footer>
+			<div class="foot_bg1">
+		    	<div class="wrapper">
+		            <div class="con">
+						<ul class="clearfix">
+							<li>
+		                        <dl>
+		                            <dt>新手指南</dt>         
+		                            <dd><a href="#">如何注册成为会员 </a></dd>
+									<dd><a href="#">手机/邮箱修改</a></dd>
+									<dd><a href="#">忘记密码/会员名</a></dd>
+									<dd><a href="#">账号无法登录</a></dd>
+									<dd><a href="#">账户安全</a></dd>
+								</dl>
+		                   </li>
+		                   <li>
+		                        <dl>
+		                            <dt>购物指南</dt>         
+		                            <dd><a href="#">购物流程 </a></dd>
+									<dd><a href="#">商品挑选/购买 </a></dd>
+									<dd><a href="#">订单查询</a></dd>
+								</dl>
+		                   </li>
+		                   <li>
+		                        <dl>
+		                            <dt>物流配送</dt>         
+		                            <dd><a href="#">常用快递</a></dd>
+									<dd><a href="#">修改收货地址</a></dd>
+									<dd><a href="#">货物签收 </a></dd>
+									<dd><a href="#">发货问题</a></dd>
+								</dl>
+		                   </li>
+		                   <li>
+		                        <dl>
+		                            <dt>支付方式</dt>         
+		                            <dd><a href="#">支付方式</a></dd>
+									<dd><a href="#">支付方式</a></dd>
+								</dl>
+		                   </li>
+		                   <li>
+		                        <dl>
+		                            <dt>新手指南</dt>         
+		                            <dd><a href="#">售后服务</a></dd>
+									<dd><a href="#">退换货政策 </a></dd>
+									<dd><a href="#">退换货流程 </a></dd>
+									<dd><a href="#">退款申请 </a></dd>
+								</dl>
+		                   </li>
+		                   <li class="foot_bg1_noborder">
+		                        <dl>
+		                            <dt>商家服务</dt>         
+		                            <dd><a href="#">关于汉购网</a></dd>
+									<dd><a href="#">招商政策</a></dd>
+									<dd><a href="#">收费标准 </a></dd>
+									<dd><a href="#">联系我们 </a></dd>
+								</dl>
+		                   </li>
+		                </ul>
+					</div>
+		        </div>
+		    </div>
+		    <div class="foot_bg2">
+		    	<div class="wrapper">
+		            <div class="con2">
+		                <p>
+		                	<a href="#">返回首页</a><span>|</span>
+						    <a href="#">商家入驻</a><span>|</span>
+							<a href="#">联系我们</a><span>|</span>
+							<a href="#">关于汉购网</a><span>|</span>
+							<a href="#">汉搜云</a><span>|</span>	
+							<a href="#">友情链接</a>
+						</p>
+		                <p>
+		                	&copy;2005-2016 武汉易行九州网络服务有限公司版权所有，并保留所有权利
+		                </p>
+		            </div>
+		        </div>
+		    </div>
+			<div class="footer-fp-img">
+				<a href="#"><img src="../images/sm_83x30.png"/></a>
+				<a href="#"><img src="../images/gangting.gif"/></a>
+				<a href="#"><img src="../images/beian.jpg"/></a>
+				<a href="#"><img src="../images/gongshang-icon.png"/></a>
+			</div>
+		</footer>
+	</body>
+</html>
+

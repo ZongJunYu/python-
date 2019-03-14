@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* track base Css */
+
+#ehong-code-input{
+	width:42px;
+	letter-spacing:2px;
+	margin:0px 8px 0px 0px;
+}
+.ehong-idcode-val{
+	position:relative;
+	padding:1px 4px 1px 4px;
+	top:0px;
+	*top:-3px;
+	letter-spacing:4px;
+	display:inline;
+	cursor:pointer;
+	font-size:40px;
+	font-family:"Courier New", Courier, monospace;
+	text-decoration:none;
+	font-weight:bold;
+	line-height: 52px;
+}
+.ehong-idcode-val0{
+	border:solid 1px #A4CDED;	
+}
+
+.ehong-idcode-val1{
+	background-color:#FCEFCF;
+}
+.ehong-idcode-val2{
+	background-color:#D0F0DF;
+}
+.ehong-idcode-val3{
+	background-color:#DCDDD8;
+}
+.ehong-idcode-val4{
+	background-color:#F1DEFF;
+}
+.ehong-idcode-val5{
+	background-color:#ACE1F1;
+}
+.ehong-code-val-tip{
+	font-size:12px;
+	color:#1098EC;
+	top:0px;
+	*top:-3px;	
+	position:relative;	
+	margin:0px 0px 0px 4px;
+	cursor:pointer;	
+}

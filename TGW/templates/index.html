@@ -1,0 +1,1402 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>汉购网 -首页</title>
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.fly.min.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{#    <script src="{% static 'js/jiaoben.js' %}"></script>#}
+</head>
+<body>
+
+
+<!--顶部-->
+<div class="public-top-layout">
+    <div class="topbar wrapper">
+        <!--顶部标题左侧-->
+        <div class="user-entry">
+            <!--登录后的-->
+            <div id="user-info" style="display: none;">
+                您好 <span> <a href="#" id="top-username"></a></span>  <!--显示用户名   个人中心-->
+                ，欢迎来到 <a href="#" title="首页" alt="首页"><span>汉购网</span></a> <span>[<a
+                    href="../html/index.html">退出</a>]</span>
+            </div>
+            <!--登录前的-->
+            <div id="user-login">
+                您好，欢迎来到 <a href="#" title="首页" alt="首页">汉购网</a>
+                <span class="login-link"><a href="../html/login.html">请登录</a></span>
+                <span class="login-link"><a href="../html/register.html">立即注册</a></span>
+            </div>
+        </div>
+        <!--顶部标题右侧-->
+        <div class="quick-menu">
+            <dl>
+                <dt><em class="ico_shop"></em>
+                    <a href="#">商家入驻</a></dt>
+            </dl>
+            <dl>
+                <dt><em class="ico_order"></em><a href="#">我的订单</a><i></i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">待付款订单</a></li>
+                        <li><a href="#">待确认收货</a></li>
+                        <li><a href="#">待评价交易</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><em class="ico_center"></em><a href="#">个人中心</a></dt>
+            </dl>
+            <dl>
+                <dt><em class="ico_service"></em>客户服务<i></i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">客服中心</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl class="weixin">
+                <dt>关注我们<i></i></dt>
+                <dd>
+                    <h4>扫描二维码<br>关注商城微信号</h4>
+                    <img src="{% static 'images/WeChatQR code.png' %}">
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<!-- PublicHeadLayout Begin -->
+<!--头部-->
+<div class="header-wrap">
+    <header class="public-head-layout wrapper">
+        <h1 class="site-logo">
+            <a href="#"><img src="{% static 'images/logo.jpg' %}"></a>
+        </h1>
+        <div class="head-search-layout">
+            <!--搜索框-->
+            <div class="head-search-bar" id="head-search-bar">
+                <form action="" method="" class="search-form" id="top_search_form">
+                    <input type="text" class="input-text" placeholder="农谷鲜">
+                    <input type="submit" value="" class="input-submit">
+                </form>
+                <!--历史搜索-->
+                <div class="search-tip" id="search-tip">
+                    <!--历史记录-->
+                    <div class="search-history">
+                        <div class="title"><span>历史纪录</span><a href="#" id="search-his-del">清除</a></div>
+                        <ul id="search-his-list"></ul>
+                    </div>
+                    <!--热门搜索-->
+                    <div class="search-hot">
+                        <div class="title"><span>热门搜索...</span></div>
+                        <ul>
+                            <li><a href="#">农谷鲜</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="keyword">
+                <ul>
+                    <li><a href="#">鸡蛋</a></li>
+                    <li><a href="#">豆皮</a></li>
+                    <li><a href="#">啤酒</a></li>
+                    <li><a href="#">苹果</a></li>
+                    <li><a href="#">土豆</a></li>
+                    <li><a href="#">米</a></li>
+                    <li><a href="#">油</a></li>
+                    <li><a href="#">热干面</a></li>
+                    <li><a href="#">龙虾</a></li>
+                    <li><a href="#">锅巴</a></li>
+                    <li><a href="#">罐头</a></li>
+                    <li><a href="#">夏橙</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="advantage">
+            <ul>
+                <li>100%正品 真品真实惠</li>
+                <li>产地直供 原汁原味</li>
+                <li>优质配送</li>
+            </ul>
+        </div>
+    </header>
+</div>
+
+<!--顶部导航-->
+<nav class="public-nav-layout ">
+    <div class="wrapper">
+        <!--全部分类-->
+        <div class="all-category">
+            <!--全部分类-->
+            <div class="title">
+                <h3><a href="#">全部分类</a></h3><i></i>
+            </div>
+            <!--下拉分类-->
+            <div class="category">
+                <ul class="menu">
+                    <li>
+                        <div class="class">
+                            <span class="ico"><img src="{% static 'images/category1.png' %}" width="16"
+                                                   height="16"></span>
+                            <h4><a href="#">生鲜水果</a></h4>
+                        </div>
+                        <div class="sub-class">
+                            <div class="sub-class-content">
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">肉类</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="http://www.hangowa.com/?act=search&amp;keyword=%E7%BE%8A%E8%82%89">羊肉</a>
+                                        <a href="#">羊肚</a>
+                                        <a href="#">羊腿</a>
+                                        <a href="#">羊腰子</a>
+                                        <a href="">牛肉</a>
+                                        <a href="#">兔肉</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">水果</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="http://www.hangowa.com/?act=search&amp;keyword=%E7%8C%95%E7%8C%B4%E6%A1%83">猕猴桃</a>
+                                        <a href="#">榴莲</a>
+                                        <a href="#">柑橘</a>
+                                        <a href="#">西柚</a>
+                                        <a href="#">石榴</a>
+                                        <a href="#">苹果</a>
+                                        <a href="#">梨子</a>
+                                        <a href="#">橙子</a>
+                                        <a href="#">地瓜</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">海鲜/水产品</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">大闸蟹</a>
+                                        <a href="#">龙虾</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">蔬菜</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">土豆</a>
+                                        <a href="#">什锦蔬菜</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li>
+                        <div class="class">
+                            <span class="ico"><img src="{% static 'images/category2.png' %}" width="16"
+                                                   height="16"></span>
+                            <h4><a href="#">蛋奶速食</a></h4>
+                        </div>
+                        <div class="sub-class">
+                            <div class="sub-class-content">
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">方便速食</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">罐头</a>
+                                        <a href="#">方便主食</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">蛋类</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">土鸡蛋</a>
+                                        <a href="#">咸鸭蛋</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li>
+                        <div class="class">
+                            <span class="ico"><img src="{% static 'images/category3.png' %}" width="16"
+                                                   height="16"></span>
+                            <h4><a href="#">休闲零食</a></h4>
+                        </div>
+                        <div class="sub-class">
+                            <div class="sub-class-content">
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">肉类零食</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="http://www.hangowa.com/?act=search&amp;keyword=%E8%8C%B6%E9%A6%99%E9%B8%A1">茶香鸡</a>
+                                        <a href="#">郭河醉鱼</a>
+                                        <a href="#">清江野鱼</a>
+                                        <a href="#">鸭锁骨</a>
+                                        <a href="#">鸭翅</a>
+                                        <a href="#">鸭脖</a>
+                                        <a href="#">茶香鸭</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">糕点</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">月饼</a>
+                                        <a href="#">曲奇饼干</a>
+                                        <a href="#">香酥</a>
+                                        <a href="#">奶酪薄饼</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li>
+                        <div class="class">
+                            <span class="ico"><img src="{% static 'images/category4.png' %}" width="16"
+                                                   height="16"></span>
+                            <h4><a href="#">粮油杂货</a></h4>
+                        </div>
+                        <div class="sub-class">
+                            <div class="sub-class-content">
+                                <div class="recommend-class">
+                                    <span><a href="#">食用油</a></span>
+                                    <span><a href="#">挂面</a></span>
+                                    <span><a href="#">大米</a></span>
+                                    <span><a href="#">粗粮</a></span>
+                                </div>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">粮油</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">食用油</a>
+                                        <a href="#">挂面</a>
+                                        <a href="#">大米</a>
+                                        <a href="#">粗粮</a>
+                                        <a href="#">国宝桥米</a>
+                                        <a href="#">福临门</a>
+                                        <a href="#">金龙鱼</a>
+                                        <a href="#">万星</a>
+                                        <a href="#">亚象</a>
+                                        <a href="#">福达坊</a>
+                                        <a href="#">鲁花</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">干货</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">枣类</a>
+                                        <a href="#">干菜</a>
+                                        <a href="#">木耳</a>
+                                        <a href="#">食用菌</a>
+                                        <a href="#">菇类</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">调味品</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">酱料</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li>
+                        <div class="class">
+                            <span class="ico"><img src="{% static 'images/category5.png' %}" width="16"
+                                                   height="16"></span>
+                            <h4><a href="#">酒水饮品</a></h4>
+                        </div>
+                        <div class="sub-class">
+                            <div class="sub-class-content">
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">茗茶</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">红茶</a>
+                                        <a href="#">水果茶/果味茶</a>
+                                        <a href="#">绿茶</a>
+                                        <a href="#">花草茶</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <h3><a href="#">冲调谷物/饮品</a></h3>
+                                    </dt>
+                                    <dd>
+                                        <a href="#">冲饮品</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="menu-right"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--头部右导航-->
+        <ul class="site-menu">
+            <li><a href="#" class="current"><span>首页</span></a></li>
+            <li><a href="#">土道家</a></li>
+            <li><a href="#"> 森林特产</a></li>
+            <li><a href="#">农谷鲜</a></li>
+            <li class="nav_new"><a href="#">醉美鹤峰土家购</a></li>
+            <li class="nav_new"><a href="#">保康特色馆</a></li>
+        </ul>
+        <div class="con-cart">
+            <a href="#" class="cart-btn">
+                <i class="cart-icon"></i>
+                <em class="cart-num">0</em>
+                <span>购物车</span>
+            </a>
+        </div>
+    </div>
+</nav>
+<!-------------------------轮播图--------------------------------->
+<div class="home-focus-layout">
+{#			<ul class="full-screen-slides" id="full-screen-slides">#}
+				<!--<li><img src="../images/web-101-101-1.jpg"></li>
+				<li><img src="../images/web-101-101-2.jpg"></li>
+				<li><img src="../images/web-101-101-3.jpg"></li>
+				<li><img src="../images/web-101-101-4.jpg"></li>
+				<li><img src="../images/web-101-101-5.jpg"></li>-->
+{#			</ul>#}
+
+{#    <ul class="full-screen-slides-pagination" id="full-screen-slides-pagination">#}
+{##}
+{##}
+{#    </ul>#}
+{#    <div class="prev-page"></div>#}
+{#    <div class="next-page"></div>#}
+    <div class="swiper-container" id="topSwiper">
+        <div class="swiper-wrapper">
+            {% for wheel in wheels %}
+                <div class="swiper-slide">
+                    <img src="{{ wheel.img }}" alt="{{ wheel.name }}">
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+{#        <div class="swiper-button-next"></div>#}
+{#        <div class="swiper-button-prev"></div>#}
+    </div>
+</div>
+<!-----------------------------侧边栏--------------------------------->
+<div class="nc-appbar">
+    <div class="nc-appbar-tabs">
+        <!--我的账户-->
+        <div id="bar-user-info">
+            <div class="user">
+                <!--我的账户-->
+                <a href="#">
+                    <div class="avatar">
+                        <img src="{% static 'images/default_user_portrait.gif' %}">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--购物车-->
+        <div class="ever" id="indexadd">
+            <div class="cart">
+                <a href="cart.html">
+                    <span class="icon" id="end"></span>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div id="cartmsg">已成功加入购物车！</div>
+        </div>
+        <!--微信-->
+        <div class="middle">
+            <div class="chat">
+                <a href="#">
+                    <span class="icon"></span>
+                </a>
+            </div>
+        </div>
+        <!--二维码-->
+        <div class="l_qrcode">
+            <a href="#">
+                <span class="icon"></span>
+                <code><img src="{% static 'images/WeChatQR code.png' %}"></code>
+            </a>
+        </div>
+        <!--退回顶部-->
+        <div class="gotop" id="gotop" style="display: none;">
+            <a href="#">
+                <span class="icon"></span>
+                <span class="tit">返回顶部</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!--------------商品列表---------------->
+<div class="outermost">
+    <div class="wrapper">
+        <!-------------------////////111111今日优惠11111///////////----------------->
+        <div class="RealBargains mt30">
+            <div class="clearfix" id="RealBargains">
+                <div class="w390">
+                    <!--<a href="#"><img src="../images/05590672125777349.jpg"></a>
+                    <a href="#"><img src="../images/05590673108846204.jpg"> </a>-->
+                </div>
+                <div class="w480">
+                    <!--<a href="#"><img src="../images/05590674169656069.jpg"></a>
+                    <a href="#"><img src="../images/05590675421568672.jpg"></a>
+                    <a href="#"><img src="../images/05590674965245453.jpg"></a>
+                    <a href="#"><img src="../images/05590675984668682.jpg"></a>-->
+                </div>
+                <div class="w320">
+                    <!--<a href="#"><img src="../images/05590676500880166.jpg"></a>
+                    <a href="#"><img src="../images/05590676855954505.jpg"></a>-->
+                </div>
+            </div>
+        </div>
+        <!-------------------////////22222推荐222222///////////----------------->
+        <div class="dailyRecommendation mt30">
+            <ul class="clearfix" id="recommend-list">
+                <!--<li>
+                    <a href="#"> <img src="../images/web-615-629-2.jpg"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="../images/web-615-629-1.jpg"></a>
+                </li>
+                <li>
+                    <a href="#"> <img src="../images/web-615-629-3.jpg"></a>
+                </li>-->
+            </ul>
+        </div>
+        <!-------------------///////////333333特产3333333/////////----------------->
+        <div class="specialty mt30">
+            <ul class="clearfix">
+                <li>
+                    <a href="#"><img src="{% static 'images/web-616-633-1.jpg' %}"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'images/web-616-633-2.jpg' %}"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'images/web-616-633-3.jpg' %}"></a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------////////////////////----------------->
+        <div class="home-floor">
+            <!-----粮油杂货----->
+            <div class="home-standard-layout clearfix">
+                <!--标题-->
+                <div class="title">
+                    <a class="wwisp" href="#">
+                        <img src="{% static 'images/web-4-41.png' %}" style="display: inline;">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="title-name" href="#">粮油杂货</a>
+                </div>
+                <!--//////////////-->
+                <div class="middle-layout">
+                    <!--左侧-->
+                    <div class="right-side-focus clearfix" id="right-side">
+                        <!--<a href="#"><img src="../images/web-4-48-1.jpg"></a>-->
+                    </div>
+                    <!--右侧-->
+                    <div class="middle-goods-list ">
+                        <ul class="clearfix" id="productList4">
+                            <!--<li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/15_05499883924341679_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 【农谷鲜】 农家自产稻花香米 5kg 原生态无公害大米 非转基因</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                               <div class="box">
+                                <img src="images/lg.jpg" class="" width="180" height="180">
+                                <h4>¥<span>3499.00</span></h4>
+                                <p>LG 49LF5400-CA 49寸IPS硬屏富贵招财铜钱设计</p>
+                                <a href="#" class="button orange addcar">加入购物车</a>
+                            </div>
+                            <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/45_05458472163236616_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 中粮初萃压榨葵花籽油 食用油5L 不添加抗氧化剂清淡工艺</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                            <div class="medium-pic">
+                                <a href="#"><img src="../images/web-4-48-2.jpg"></a>
+                            </div>
+                            <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/40_05252020386598446_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 福达坊 清香葵花籽油 5L   精选优质葵花籽 压榨工艺</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                            <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/146_05531058080059884_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 芷睿  泰国香米5KG  天然米香</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                               <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/45_05452353746958712_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 长寿花东北优质大米5kg 三江平原一季一级孕育 2016年当季新米</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                               <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/156_05554406643778208_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 益盐堂  加碘食用盐500g*6包   天然深井矿物盐 厨房调味料</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                               <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/155_05539744011018634_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 五常长粒香米  礼家尚品香米10KG</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>
+                               <li>
+                                  <dl>
+                                      <dd class="goods-thumb">
+                                          <a href="#"><img src="../images/26_05249323436846371_240.jpg"></a>
+                                      </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 什湖寒地米金典东北长粒香 2.5kg</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                  </dl>
+                               </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--生鲜果蔬-->
+            <div class="home-standard-layout clearfix">
+                <!--标题-->
+                <div class="title">
+                    <a class="wwisp" href="#">
+                        <img src="{% static 'images/web-1-11.png' %}" style="display: inline;">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="title-name" href="#">生鲜果蔬</a>
+                </div>
+                <!--//////////////-->
+                <div class="middle-layout">
+                    <!--左侧-->
+                    <div class="right-side-focus clearfix">
+                        <a href="#"><img src="{% static 'images/web-1-18-1.jpg' %}"></a>
+                    </div>
+                    <!--右侧-->
+                    <div class="middle-goods-list">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-1.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 恩施高山新鲜硒土豆5斤(限量特价)包邮老品种新鲜蔬菜洋芋非转基马铃薯</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-2.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 钟祥农家小香薯（预售中，8月5日开始发货）（约5斤）</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <div class="medium-pic">
+                                <a href="#"><img src="{% static 'images/web-1-18-2.jpg' %}"></a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-3.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 【预售 11月20日发货】 柚子大王 丹霞谢柚 4个装/箱 果径55CM左右 10斤左右</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-4.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 梁子湖生态大闸蟹 礼遇精品 八只装（公蟹3.2-2.8两 4只 母蟹2.2-2.0两 4只）</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-5.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 2017新下树有机生栗子京山即食板栗生新鲜3斤装包邮</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-6.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 陕西红富士10斤装 新鲜水果 红富士现摘现发</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-7.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 红土地 红安苕 红安板栗心香红薯1.5kg 每个0.6-1.5两</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb5-8.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 琯溪蜜柚红心蜜柚4-5斤装包邮</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--休闲零食-->
+            <div class="home-standard-layout clearfix">
+                <!--标题-->
+                <div class="title">
+                    <a class="wwisp" href="#">
+                        <img src="{% static 'images/web-3-31.png' %}" style="display: inline;">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="title-name" href="#">休闲零食</a>
+                </div>
+                <!--//////////////-->
+                <div class="middle-layout">
+                    <!--左侧-->
+                    <div class="right-side-focus clearfix">
+                        <a href="#"><img src="{% static 'images/web-3-38-1.jpg' %}"></a>
+                    </div>
+                    <!--右侧-->
+                    <div class="middle-goods-list">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-1.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 【神农架】脱水紫薯低温烘焙紫薯丁 原味休闲零食紫薯条150g</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-2.png' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 老襄阳特产 襄梦牌 手工麻花280g 袋装 烧烤味</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <div class="medium-pic">
+                                <a href="#"><img src="{% static 'images/web-3-38-2.jpg' %}"></a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-3.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 雨润 骨香盐焗鱼240g（12g*20）休闲零食酱汁风味 香辣小鱼仔鱼条</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-4.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 天喔主意 牛肉味小青豆1Kg 脆香好吃 独立小包装零食</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-5.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 扬子江金块肉松蛋糕18袋装 约605g</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-6.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 扬子江榴莲饼 10袋装 约480g</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-7.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> ZEK 草莓味果冻3杯装 255g 水果味布丁 马来西亚果冻进口零食品</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb6-8.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 香辣兔腿 1个/袋*3袋包邮</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--蛋奶速食-->
+            <div class="home-standard-layout clearfix">
+                <!--标题-->
+                <div class="title">
+                    <a class="wwisp" href="#">
+                        <img src="{% static 'images/web-2-21.png' %}" style="display: inline;">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="title-name" href="#">蛋奶速食</a>
+                </div>
+                <!--//////////////-->
+                <div class="middle-layout">
+                    <!--左侧-->
+                    <div class="right-side-focus clearfix">
+                        <a href="#"><img src="{% static 'images/web-2-28-1.jpg' %}"></a>
+                    </div>
+                    <!--右侧-->
+                    <div class="middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-1.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 大汉口 正宗武汉热干面 川味湘味热干面组合装 共16包</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-2.png' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 捞旺肚鸡汤 滋补送礼速食鸡汤老母鸡汤1300g罐装方便快捷全国包邮</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <div class="medium-pic">
+                                <a href="#"><img src="{% static 'images/web-2-28-2.jpg' %}"></a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-3.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 【4罐】糖水黄桃罐头 鲜黄桃制成 口感酸甜 425g*4罐</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-4.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 孔明菜 襄阳特产70g*30包 麻辣味</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-5.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 带芯红皮 新货野生红莲子500g洪湖 非湘莲非白莲子无硫</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-6.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 汉美特 蕲春艾草之都 大别山麓 山林散养 高档绿壳土鸡蛋 30枚</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-7.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 白鸭松花皮蛋20个装（盒） 口感清爽、风味独特</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb7-8.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 美羚羊奶粉 全脂纯羊奶粉400g</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--酒水饮品-->
+            <div class="home-standard-layout clearfix">
+                <!--标题-->
+                <div class="title">
+                    <a class="wwisp" href="#">
+                        <img src="{% static 'images/web-5-51.png' %}" style="display: inline;">
+                    </a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a class="title-name" href="#">酒水饮品</a>
+                </div>
+                <!--//////////////-->
+                <div class="middle-layout">
+                    <!--左侧-->
+                    <div class="right-side-focus clearfix">
+                        <a href="#"><img src="{% static 'images/web-5-58-1.jpg' %}"></a>
+                    </div>
+                    <!--右侧-->
+                    <div class="middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-1.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 天喔巴诺咖啡300ml*6瓶 即饮醇香拿铁咖啡饮料瓶装 17年工厂正品</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-2.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 永蓝水蜜桃味苏打水饮料弱碱性水无糖无汽水饮用水430ML 24瓶装</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <div class="medium-pic">
+                                <a href="#"><img src="{% static 'images/web-5-58-2.jpg' %}"></a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-3.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 神农架养生蜂蜜茶245ml*4罐 健康蜂蜜饮品包邮</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-4.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 孔乙己 红芙蓉清爽型黄酒 500ml*6</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-5.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 劲牌劲酒 皇宫人参酒42度 500ml 六瓶整箱 白酒 保健酒</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-6.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 希之源一榨鲜五谷杂粮汁1250g*6 瓶健康饮品特惠装粗粮饮料免运费</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-7.jpg' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 鸡尾酒紫葡萄味 275ml*3瓶</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd class="goods-thumb">
+                                        <a href="#"><img src="{% static 'images/lweb8-8.png' %}"></a>
+                                    </dd>
+                                    <dt class="goods-name">
+                                        <a href="#"> 法国 波尔多红道干红葡萄酒礼盒 皮盒装750ml*2瓶 红酒 红葡萄酒 礼盒</a>
+                                    </dt>
+                                    <dd class="goods-price">
+                                        <em>¥27.90</em>
+                                        <span class="original">¥37.90</span>
+                                    </dd>
+                                </dl>
+                                <div class="addcartlist">
+                                    <a href="#">加入购物车</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--底部-->
+<footer>
+    <div class="foot_bg1">
+        <div class="wrapper">
+            <div class="con">
+                <ul class="clearfix">
+                    <li>
+                        <dl>
+                            <dt>新手指南</dt>
+                            <dd><a href="#">如何注册成为会员 </a></dd>
+                            <dd><a href="#">手机/邮箱修改</a></dd>
+                            <dd><a href="#">忘记密码/会员名</a></dd>
+                            <dd><a href="#">账号无法登录</a></dd>
+                            <dd><a href="#">账户安全</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>购物指南</dt>
+                            <dd><a href="#">购物流程 </a></dd>
+                            <dd><a href="#">商品挑选/购买 </a></dd>
+                            <dd><a href="#">订单查询</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>物流配送</dt>
+                            <dd><a href="#">常用快递</a></dd>
+                            <dd><a href="#">修改收货地址</a></dd>
+                            <dd><a href="#">货物签收 </a></dd>
+                            <dd><a href="#">发货问题</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>支付方式</dt>
+                            <dd><a href="#">支付方式</a></dd>
+                            <dd><a href="#">支付方式</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>新手指南</dt>
+                            <dd><a href="#">售后服务</a></dd>
+                            <dd><a href="#">退换货政策 </a></dd>
+                            <dd><a href="#">退换货流程 </a></dd>
+                            <dd><a href="#">退款申请 </a></dd>
+                        </dl>
+                    </li>
+                    <li class="foot_bg1_noborder">
+                        <dl>
+                            <dt>商家服务</dt>
+                            <dd><a href="#">关于汉购网</a></dd>
+                            <dd><a href="#">招商政策</a></dd>
+                            <dd><a href="#">收费标准 </a></dd>
+                            <dd><a href="#">联系我们 </a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot_bg2">
+        <div class="wrapper">
+            <div class="con2">
+                <p>
+                    <a href="#">返回首页</a><span>|</span>
+                    <a href="#">商家入驻</a><span>|</span>
+                    <a href="#">联系我们</a><span>|</span>
+                    <a href="#">关于汉购网</a><span>|</span>
+                    <a href="#">汉搜云</a><span>|</span>
+                    <a href="#">友情链接</a>
+                </p>
+                <p>
+                    ©2005-2016 武汉易行九州网络服务有限公司版权所有，并保留所有权利
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-fp-img">
+        <a href="#"><img src="{% static 'images/sm_83x30.png' %}"></a>
+        <a href="#"><img src="{% static 'images/gangting.gif' %}"></a>
+        <a href="#"><img src="{% static 'images/beian.jpg' %}"></a>
+        <a href="#"><img src="{% static 'images/gongshang-icon.png' %}"></a>
+    </div>
+</footer>
+
+
+​
+
+
+</body>
+</html>
