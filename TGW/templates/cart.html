@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>汉购网 -购物车</title>
-		<link rel="stylesheet" type="text/css" href="../css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../css/base.css">
-		<link rel="stylesheet" type="text/css" href="../css/cart.css">	
-		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/cart.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 		
 	</head>
 	<body>
@@ -23,11 +24,15 @@
 						，欢迎来到 <a href="#" title="首页" alt="首页"><span>汉购网</span></a> <span>[<a href="#">退出</a>]</span>
 					</div>
 					<!--登录前的-->
-					<div id="user-login">
-						您好，欢迎来到	<a href="#" title="首页" alt="首页">汉购网</a>
-						<span class="login-link"><a href="#">请登录</a></span> 
-						<span class="login-link"><a href="#">立即注册</a></span>
-					</div>
+					 <div id="user-login">
+                您好，欢迎来到 <a href="#" title="首页" alt="首页">汉购网</a>
+                <span class="login-link"><a href="{% url 'tgw:login' %}">{{ user.name | default:'请登录' }}</a></span>
+                <span class="login-link"><a href="{% url 'tgw:register'  %}">立即注册</a></span>
+                {% if user %}
+                    <span class="login-link"><a href="{% url 'tgw:logout' %}">退出</a></span>
+                {% endif %}
+{#                <span class="login-link"><a href="{% url 'tgw:index' %}">退出</a></span>#}
+            </div>
 				</div>
 				
 				<!--顶部标题右侧-->
@@ -37,14 +42,8 @@
 						<a href="#">商家入驻</a></dt>
 					</dl>
 					<dl>
-						<dt><em class="ico_order"></em><a href="#">我的订单</a><i></i></dt>
-						<dd>
-							<ul>
-								<li><a href="#">待付款订单</a></li>
-								<li><a href="#">待确认收货</a></li>
-								<li><a href="#">待评价交易</a></li>
-							</ul>
-						</dd>
+						<dt><em class="ico_order"></em><a href="{% url 'tgw:orderlist' %}">我的订单</a><i></i></dt>
+
 					</dl>
 					<dl>
 						<dt><em class="ico_center"></em><a href="#">个人中心</a></dt>
@@ -102,15 +101,8 @@
 		    </ul>
     	</header>
     	<!--购物车为空-->
-    	<div class="ncc-null-shopping" style="display: none;">
-    		<i class="ico"></i>
-		  	<h4>您的购物车还没有商品</h4>
-		  	<p>
-		  		<a href="index.html" class="ncbtn mr10">马上去购物</a> 
-		  		<a href="#" class="ncbtn">查看自己的订单</a>
-		  	</p>
-		</div>
-<!-------------------------------我的购物车---------------------------->
+        {% if carts %}
+           <!-------------------------------我的购物车---------------------------->
 		<div class="ncc-wrapper" >
 			<div class="ncc-main">
 		  		<div class="ncc-title">
@@ -154,17 +146,17 @@
 					            	<a href="#" class="goods-title">特产稻香长粒大米10斤 非转基因长粒大米 香糯清甜【荆门农谷鲜】</a>
 							    <dt>
 	          					<td>
-	                        		<em class="goods-price">30.00</em> 
+	                        		<em class="goods-price">30.00</em>
 	            				</td>
 	                    		<td class="ws0">
 	                    			<a href="#" class="add-substract-key tip">-</a>
 						            <input value="1" class="text tc w20" type="text">
 						            <a href="#" class="add-substract-key tip">+</a>
 	                    		</td>
-	                    		<td>            
+	                    		<td>
 	                    			<em class="goods-subtotal">30.00</em>
 	            				</td>
-					          	<td class="tl td-border-right">            
+					          	<td class="tl td-border-right">
 						          	<a href="#">移入收藏夹</a><br>
 						            <a href="#" >删除</a>
 					          	</td>
@@ -177,8 +169,100 @@
 				      	<tfoot>
 					        <tr>
 					          	<td colspan="20">
-					          		<a id="delSelect" href="javascript:;">删除选中</a>
-					          		<a id="backindex" href="index.html">返回首页</a>
+					          		<a id="backindex" href="{% url 'tgw:index' %}">返回首页</a>
+						          	<div class="ncc-all-account">
+						          		商品总价（不含运费）<em id="total">0</em>元
+						          	</div>
+						            <a href="{% url 'tgw:generateorder' %}" class="ncc-next-submit">确认订单</a>
+					          	</td>
+					        </tr>
+				      	</tfoot>
+				    </table>
+				</form>
+				<!-- 猜你喜欢 -->
+			</div>
+		</div>
+        {% endif %}
+    	<div class="ncc-null-shopping" style="display: none;">
+    		<i class="ico"></i>
+		  	<h4>您的购物车还没有商品</h4>
+		  	<p>
+		  		<a href="index.html" class="ncbtn mr10">马上去购物</a>
+		  		<a href="#" class="ncbtn">查看自己的订单</a>
+		  	</p>
+		</div>
+<!-------------------------------我的购物车---------------------------->
+		<div class="ncc-wrapper" >
+			<div class="ncc-main">
+		  		<div class="ncc-title">
+				    <h3>我的购物车</h3>
+				    <h5>查看购物车商品清单，增加减少商品数量，并勾选想要的商品进入下一步操作。</h5>
+			  	</div>
+				<form action="" method="">
+				    <table class="ncc-table-style">
+				      	<thead>
+					        <tr>
+					          	<th class="w50">
+					          		<label>
+					              		<input checked="" value="1" id="allSelect" type="checkbox">全选
+					               	</label>
+					          	</th>
+					            <th>图片</th><!--图片-->
+					            <th>商品</th>
+					            <th class="w150">单价(元)</th>
+					            <th class="w100">数量</th>
+					            <th class="w150">小计(元)</th>
+					            <th class="w80 tl">操作</th>
+					        </tr>
+				        </thead>
+
+	                  	{% for cart in carts %}
+                             <tbody id="list">
+	        <!-----------------------购物车列表---------------->
+					        <tr>
+					          	<th colspan="20">
+					            	<div class="ncc-store-name">
+					            		店铺：<a href="#">荆门众邦特色馆</a>
+					            	</div>
+				            	</th>
+					        </tr>
+			                <tr class="shop-list" data-cardid="{{ cart.id }}">
+					          	<td class="td-border-left">
+					          		<input type="checkbox" data-goods="{{ cart.goods.id }}">
+					          	</td>
+					          	<td>
+					          		<a href="#" class="ncc-goods-thumb"><img src="{{ cart.goods.img }}"></a>
+					          	</td>
+					            <td>
+					            	<a href="#" class="goods-title" >{{ cart.goods.name }}</a>
+                                </td>>
+	          					<td>
+	                        		<em class="goods-price" data-price="{{ cart.goods.price }}">{{ cart.goods.price }}</em>
+	            				</td>
+	                    		<td class="ws0">
+	                    			<a href="#" class="add-substract-key tip">-</a>
+						            <input value="{{ cart.number }}" class="text tc w20" data-num="{{ cart.number }}" type="text">
+						            <a href="#" class="add-substract-key tip">+</a>
+	                    		</td>
+	                    		<td>
+	                    			<em class="goods-subtotal">30.00</em>
+	            				</td>
+					          	<td class="tl td-border-right">
+						          	<a href="#">移入收藏夹</a><br>
+						            <a href="#" >删除</a>
+					          	</td>
+					        </tr>
+					         <tr>
+					        	<td colspan="20"></td>
+					        </tr>
+	                    </tbody>
+	                  	{% endfor %}
+
+	    <!---------------------------总价----------------------------->
+				      	<tfoot>
+					        <tr>
+					          	<td colspan="20">
+					          		<a id="backindex" href="{% url 'tgw:index' %}">返回首页</a>
 						          	<div class="ncc-all-account">
 						          		商品总价（不含运费）<em id="total">0</em>元
 						          	</div>

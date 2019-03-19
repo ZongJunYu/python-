@@ -27,14 +27,19 @@
             <!--登录后的-->
             <div id="user-info" style="display: none;">
                 您好 <span> <a href="#" id="top-username"></a></span>  <!--显示用户名   个人中心-->
-                ，欢迎来到 <a href="#" title="首页" alt="首页"><span>汉购网</span></a> <span>[<a
-                    href="../html/index.html">退出</a>]</span>
+                ，欢迎来到 <a href="#" title="首页" alt="首页">
+                <span>汉购网</span></a>
+                <span><a href="{% url 'tgw:index' %}">退出</a></span>
             </div>
             <!--登录前的-->
             <div id="user-login">
                 您好，欢迎来到 <a href="#" title="首页" alt="首页">汉购网</a>
-                <span class="login-link"><a href="../html/login.html">请登录</a></span>
-                <span class="login-link"><a href="../html/register.html">立即注册</a></span>
+                <span class="login-link"><a href="{% url 'tgw:login' %}">{{ user.name | default:'请登录' }}</a></span>
+                <span class="login-link"><a href="{% url 'tgw:register'  %}">立即注册</a></span>
+                {% if user %}
+                    <span class="login-link"><a href="{% url 'tgw:logout' %}">退出</a></span>
+                {% endif %}
+{#                <span class="login-link"><a href="{% url 'tgw:index' %}">退出</a></span>#}
             </div>
         </div>
         <!--顶部标题右侧-->
@@ -44,14 +49,8 @@
                     <a href="#">商家入驻</a></dt>
             </dl>
             <dl>
-                <dt><em class="ico_order"></em><a href="#">我的订单</a><i></i></dt>
-                <dd>
-                    <ul>
-                        <li><a href="#">待付款订单</a></li>
-                        <li><a href="#">待确认收货</a></li>
-                        <li><a href="#">待评价交易</a></li>
-                    </ul>
-                </dd>
+                <dt><em class="ico_order"></em><a href="{% url 'tgw:orderlist' %}">我的订单</a><i></i></dt>
+
             </dl>
             <dl>
                 <dt><em class="ico_center"></em><a href="#">个人中心</a></dt>
@@ -427,7 +426,7 @@
         <!--购物车-->
         <div class="ever" id="indexadd">
             <div class="cart">
-                <a href="cart.html">
+                <a href="{% url 'tgw:cart' %}">
                     <span class="icon" id="end"></span>
                     <span>购物车</span>
                 </a>
@@ -524,132 +523,32 @@
                 <div class="middle-layout">
                     <!--左侧-->
                     <div class="right-side-focus clearfix" id="right-side">
-                        <!--<a href="#"><img src="../images/web-4-48-1.jpg"></a>-->
+                        <a href="#"><img src="{% static 'images/web-4-48-1.jpg' %}"></a>
                     </div>
                     <!--右侧-->
                     <div class="middle-goods-list ">
                         <ul class="clearfix" id="productList4">
-                            <!--<li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/15_05499883924341679_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 【农谷鲜】 农家自产稻花香米 5kg 原生态无公害大米 非转基因</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                               <div class="box">
-                                <img src="images/lg.jpg" class="" width="180" height="180">
-                                <h4>¥<span>3499.00</span></h4>
-                                <p>LG 49LF5400-CA 49寸IPS硬屏富贵招财铜钱设计</p>
-                                <a href="#" class="button orange addcar">加入购物车</a>
-                            </div>
-                            <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/45_05458472163236616_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 中粮初萃压榨葵花籽油 食用油5L 不添加抗氧化剂清淡工艺</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                            <div class="medium-pic">
-                                <a href="#"><img src="../images/web-4-48-2.jpg"></a>
-                            </div>
-                            <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/40_05252020386598446_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 福达坊 清香葵花籽油 5L   精选优质葵花籽 压榨工艺</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                            <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/146_05531058080059884_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 芷睿  泰国香米5KG  天然米香</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                               <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/45_05452353746958712_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 长寿花东北优质大米5kg 三江平原一季一级孕育 2016年当季新米</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                               <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/156_05554406643778208_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 益盐堂  加碘食用盐500g*6包   天然深井矿物盐 厨房调味料</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                               <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/155_05539744011018634_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 五常长粒香米  礼家尚品香米10KG</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>
-                               <li>
-                                  <dl>
-                                      <dd class="goods-thumb">
-                                          <a href="#"><img src="../images/26_05249323436846371_240.jpg"></a>
-                                      </dd>
-                                    <dt class="goods-name">
-                                        <a href="#"> 什湖寒地米金典东北长粒香 2.5kg</a>
-                                    </dt>
-                                    <dd class="goods-price">
-                                        <em>¥27.90</em>
-                                        <span class="original">¥37.90</span>
-                                    </dd>
-                                  </dl>
-                               </li>-->
+                            {% for good in goods %}
+                                <li>
+                                    <dl>
+                                        <dd class="goods-thumb">
+                                            <a href="{% url 'tgw:goods' good.id%}"><img src="{{ good.img }}" alt=""></a>
+                                        </dd>
+                                        <dt class="goods-name">
+                                            <a href="">{{ good.name }}</a>
+                                        </dt>
+                                        <dd class="goods-price">
+                                            <em>{{ good.price }}</em>
+                                            <span class="original">{{ good.marketprice }}</span>
+                                        </dd>
+
+                                    </dl>
+                                    <div class="addcartlist">
+                                    <a href="{% url 'tgw:cart' %}">加入购物车</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+
                         </ul>
                     </div>
                 </div>

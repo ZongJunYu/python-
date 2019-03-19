@@ -1,22 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>汉购网 -登录</title>
-		<link rel="stylesheet" type="text/css" href="../css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../css/login.css">
-		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
-		<script type="text/javascript" src="../js/login.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
 	</head>
 	<body>
 		<!--头部-->
 		<div class="header-wrap">
 		  	<header class="public-head-layout">
 			    <h1 class="site-logo">
-			    	<a href="#"><img src="../images/logo.jpg"></a>
+			    	<a href="#"><img src="{% static 'images/logo.jpg' %}"></a>
 			    </h1>
 	            <div class="nc-login-now">
-				    <span class="avatar"><img src="../images/default_user_portrait.gif"></span>
+				    <span class="avatar"><img src="{% static 'images/default_user_portrait.gif' %}"></span>
 				    <span>您好，欢迎来到汉购网<br>
 				    	已注册的会员请登录，或立即
 				    	<a href="register.html">注册新会员</a>
@@ -28,7 +29,7 @@
 		<div class="nc-login-layout">
 			<!--背景-->
 		  	<div class="left-pic">
-		  		<img src="../images/4.jpg" border="0">
+		  		<img src="{% static 'images/4.jpg' %}" border="0">
 		  	</div>
 		  	<!--登录部分-->
 		  	<div class="nc-login">
@@ -39,46 +40,32 @@
 			        	<li>
 			        		<a href="#" class="tabulous_active">用户登录<i></i></a>
 			        	</li>
-			        	<li>
-			        		<a href="#">扫码登录<i></i></a>
-			        	</li>
 			        	<span class="tabulousclear"></span>
 		            </ul>
 			      	<div class="tabs-container">
 				        <div class="tabs-content">
-				          	<form class="nc-login-form" method="" action="">
+				          	<form  method="post" action="{% url 'tgw:login' %} " class="nc-login-form">
+                                {% csrf_token %}
 					            <dl>
-				              		<dt>账&nbsp;&nbsp;&nbsp;号：</dt>
+				              		<dt>邮&nbsp;&nbsp;&nbsp;箱：</dt>
 				              		<dd>
-				                		<input class="text" placeholder="可使用已注册的用户名或手机号登录" type="text" id="username">
+				                		<input class="text" placeholder="可使用你的邮箱注册" type="text" id="username" name="email" >
 				              		</dd>
 					            </dl>
 				            	<dl>
 					              	<dt>密&nbsp;&nbsp;&nbsp;码：</dt>
 					              	<dd>
-					                	<input class="text" placeholder="6-20个大小写英文字母、符号或数字" type="text" id="pad">
+					                	<input class="text" placeholder="6-20个大小写英文字母、符号或数字" type="text" id="pad" name="password">
 					              	</dd>
 					            </dl>
-			                    <div class="handle-div">
-						            <span class="auto">
-						            	<input class="checkbox" type="checkbox">
-						            	七天自动登录
-						            </span>
-						            <a class="forget" href="#">忘记密码？</a>
-			                    </div>
 					            <div class="submit-div">
-				              		<input class="submit" value="登&nbsp;&nbsp;&nbsp;录" type="button" id="loginsub">
+				              		<input class="submit" value="登&nbsp;&nbsp;&nbsp;录" type="submit" id="loginsub">
 				            	</div>
 				          	</form>
 				        </div>
 			        </div>
 	    		</div>
-			    <div class="nc-login-api">
-		            <h4>使用合作网站账号登录：</h4>
-		            <a href="#" title="QQ账号登录" class="qq"><i></i>QQ</a>
-		            <a href="#" title="微信账号登录" class="wx"><i></i>微信</a>
-		        </div>
-  			</div>
+
   			<div class="clear"></div>
 		</div>
 		<!--底部-->
@@ -88,8 +75,8 @@
 				<div class="wrapper">
 					<div class="clearfix">
 						<div class="fl right-flag">
-							<a href="#"><img src="../images/credit-flag3.png"></a>
-							<a href="#"><img src="../images/isc2.png"></a>
+							<a href="#"><img src="{% static 'images/credit-flag3.png' %}"></a>
+							<a href="#"><img src="{% static 'images/isc2.png' %}"></a>
 						</div>
 						<div class="fl about-us">
 							<p>

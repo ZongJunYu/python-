@@ -105,46 +105,55 @@ $(function () {
 })
 
 /////////////////////////////////商品列表//////////////
-	$(function(){
-		//全局变量， 用来保存获取到json中的所有商品数据
-		var arr = [];
-		//先获取数据并创建节点，显示数据
-		$.get("../json/productList-1.json", function(data){
-			console.log(data);
-			arr = data;	
-			//创建li节点
-			$( "<a href=" + "'#'" + "class='color1'" + ">" + "<img src=" + arr[0].imgsrc + ">" + "</a>").appendTo(".w390");
-			$( "<a href=" + "'#'" + "class='color2'" + ">" + "<img src=" + arr[1].imgsrc + ">" + "</a>").appendTo(".w390");
-			$( "<a href=" + "'#'" + "class='color3'" + ">" + "<img src=" + arr[2].imgsrc + ">" + "</a>").appendTo(".w480");
-			$( "<a href=" + "'#'" + "class='color4'" + ">" + "<img src=" + arr[3].imgsrc + ">" + "</a>").appendTo(".w480");
-			$( "<a href=" + "'#'" + "class='color5'" + ">" + "<img src=" + arr[4].imgsrc + ">" + "</a>").appendTo(".w480");
-			$( "<a href=" + "'#'" + "class='color6'" + ">" + "<img src=" + arr[5].imgsrc + ">" + "</a>").appendTo(".w480");
-			$( "<a href=" + "'#'" + "class='color7'" + ">" + "<img src=" + arr[6].imgsrc + ">" + "</a>").appendTo(".w320");
-			$( "<a href=" + "'#'" + "class='color8'" + ">" + "<img src=" + arr[7].imgsrc + ">" + "</a>").appendTo(".w320");
-			
-		})
-		
-//--------------------动画
-		$("#RealBargains").on("mouseover", "img", function(){
-			$(this).stop(true).animate({"margin-left":-10},500);
-		})
-		$("#RealBargains").on("mouseleave", "img", function(){
-			$(this).stop(true).animate({"margin-left":10},500);
-		})
-		
-//---------------------点击商品进入详情
-		$("#RealBargains").on("click", "a", function(){
-			//console.log("click");
-			var index = $(this).index("#RealBargains a"); 
-			var obj = arr[index];
-			//console.log(obj.id);
-			//进入详情页， 且将当前点击的商品的id传入
-			location.href = "details.html?id=" + obj.id;
-		})
-		
-	})
-	//////////////////////////////////////////////////////////
+// 	$(function(){
+// 		//全局变量， 用来保存获取到json中的所有商品数据
+// 		var arr = [];
+// 		//先获取数据并创建节点，显示数据
+// 		$.get("/tgw/addcart", function(data){
+// 			console.log(data);
+// 			arr = data;	
+// 			//创建li节点
+// 			$( "<a href=" + "'#'" + "class='color1'" + ">" + "<img src=" + arr[0].imgsrc + ">" + "</a>").appendTo(".w390");
+// 			$( "<a href=" + "'#'" + "class='color2'" + ">" + "<img src=" + arr[1].imgsrc + ">" + "</a>").appendTo(".w390");
+// 			$( "<a href=" + "'#'" + "class='color3'" + ">" + "<img src=" + arr[2].imgsrc + ">" + "</a>").appendTo(".w480");
+// 			$( "<a href=" + "'#'" + "class='color4'" + ">" + "<img src=" + arr[3].imgsrc + ">" + "</a>").appendTo(".w480");
+// 			$( "<a href=" + "'#'" + "class='color5'" + ">" + "<img src=" + arr[4].imgsrc + ">" + "</a>").appendTo(".w480");
+// 			$( "<a href=" + "'#'" + "class='color6'" + ">" + "<img src=" + arr[5].imgsrc + ">" + "</a>").appendTo(".w480");
+// 			$( "<a href=" + "'#'" + "class='color7'" + ">" + "<img src=" + arr[6].imgsrc + ">" + "</a>").appendTo(".w320");
+// 			$( "<a href=" + "'#'" + "class='color8'" + ">" + "<img src=" + arr[7].imgsrc + ">" + "</a>").appendTo(".w320");
+//			
+// 		})
+//		
+// // //--------------------动画
+// // 		$("#RealBargains").on("mouseover", "img", function(){
+// // 			$(this).stop(true).animate({"margin-left":-10},500);
+// // 		})
+// // 		$("#RealBargains").on("mouseleave", "img", function(){
+// // 			$(this).stop(true).animate({"margin-left":10},500);
+// // 		})
+//		
+// //---------------------点击商品进入详情
+// 		$("#RealBargains").on("click", "a", function(){
+// 			//console.log("click");
+// 			var index = $(this).index("#RealBargains a"); 
+// 			var obj = arr[index];
+// 			//console.log(obj.id);
+// 			//进入详情页， 且将当前点击的商品的id传入
+// 			location.href = "details.html?id=" + obj.id;
+// 		})
+//		
+// 	})
+// 	//////////////////////////////////////////////////////////
 //---------------------今日优惠
+$(function () {
+	
+})
+
+
+
+
+
+
 	$(function(){
 		var arr = [];
 		$.get("../json/productList-2.json", function(data){

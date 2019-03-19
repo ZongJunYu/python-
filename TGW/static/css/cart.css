@@ -14,7 +14,7 @@
 	margin: 0 auto;
 }
 .ncc-head-layout { 
-	display: block; 
+	display: block;
 	width: 1200px; 
 	height: 100px; 
 	margin: 0 auto; 
@@ -77,8 +77,8 @@
 .ncc-flow li i.step4 { 
 	background-position: -90px 0;
 }
-.ncc-flow li p { 
-	font-size: 14px/24px arial,"microsoft yahei";  
+.ncc-flow li p {
+	font-size: 14px/24px arial,"microsoft yahei";
 	color: #CCC; 
 	text-align: center; 
 	width: 100%; 

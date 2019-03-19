@@ -1,14 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>汉购网-详情</title>
-		<link rel="stylesheet" type="text/css" href="../css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../css/base.css">
-		<link rel="stylesheet" type="text/css" href="../css/details.css">
-		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
-		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="../js/details.js"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/details.js' %}"></script>
 	</head>
 	<body>
 		<!--顶部-->
@@ -23,10 +24,14 @@
 					</div>
 					<!--登录前的-->
 					<div id="user-login">
-						您好，欢迎来到	<a href="#" title="首页" alt="首页">汉购网</a>
-						<span class="login-link"><a href="login.html">请登录</a></span> 
-						<span class="login-link"><a href="register.html">立即注册</a></span>
-					</div>
+                您好，欢迎来到 <a href="#" title="首页" alt="首页">汉购网</a>
+                <span class="login-link"><a href="{% url 'tgw:login' %}">{{ user.name | default:'请登录' }}</a></span>
+                <span class="login-link"><a href="{% url 'tgw:register'  %}">立即注册</a></span>
+                {% if user %}
+                    <span class="login-link"><a href="{% url 'tgw:logout' %}">退出</a></span>
+                {% endif %}
+{#                <span class="login-link"><a href="{% url 'tgw:index' %}">退出</a></span>#}
+            </div>
 				</div>
 				
 				<!--顶部标题右侧-->
@@ -372,7 +377,7 @@
 					<!--中图-->
 			    	<div class="gallery_wrap">
 				        <div class="smallImg">
-				        	<img src="" >
+				        	<img src="{{ good.img }}" >
 				        	<div class="smallArea"></div>	
 				        </div>
 				    </div>
@@ -409,13 +414,13 @@
 		                <dl>
 			                <dt>市&nbsp;&nbsp;场&nbsp;&nbsp;价：</dt>
 			                <dd class="cost-price">
-			                    <strong><em id="unit"></em><span id="original"></span></strong>
+			                    <strong><em id="unit">{{ good.price }}</em><span id="original"></span></strong>
 			                </dd>
 		                </dl>
 			            <dl>
 			                <dt>商&nbsp;&nbsp;城&nbsp;&nbsp;价：</dt>
 			                <dd class="price">
-			                   <strong><em id="punit"></em><span id="price"></span></strong>
+			                   <strong><em id="punit">{{ good.marketprice }}</em><span id="price"></span></strong>
 			                </dd>
 			            </dl>
 		                <dl class="rate">
@@ -527,15 +532,15 @@
 	      				<!--数量-->
 	        			<div class="ncs-figure-input">
 	          				<input value="1"  class="input-text" type="text">
-	          				<a href="#" class="increase">&nbsp;</a> 
-	          				<a href="#" class="decrease" >&nbsp;</a> 
+	          				<a href="#" class="increase">&nbsp;</a>
+	          				<a href="#" class="decrease" >&nbsp;</a>
 	        			</div>
 	    				<div class="ncs-point" style="display: none;">
 	    					<i></i>
 	          				<span>您选择的商品库存<strong id="repertory">479255</strong>件</span> 
 	                   	</div>
 	        			<div class="ncs-btn">
-	          				<a href="#" class="addcart" title="加入购物车" id="detailsadd">
+	          				<a  class="addcart" title="加入购物车" id="detailsadd" data-goodsid="{{ good.id }}">
 	          					<i></i>加入购物车
 	          				</a>
 	          				<a href="#" class="buynow" title="立即购买">立即购买</a>
@@ -587,7 +592,7 @@
 				<div class="ever">
 					<!--购物车-->
 					<div class="cart">
-						<a href="cart.html">
+						<a href="{% url 'tgw:cart' %}">
 							<span class="icon"></span> 
 							<span class="name">购物车</span>
 							<i>3</i>
@@ -814,9 +819,9 @@
 				          	<li><a href="#">购买咨询</a></li>
 				        </ul>
         				<div class="add-cart" style="display: block;">
-        					<a href="#" class="addcart" title="加入购物车">
+        					<span  class="addcart" title="加入购物车">
 	          					<i></i>加入购物车
-	          				</a>
+	          				</span>
            					 <!-- S 加入购物车弹出提示框 -->
 				          	<div class="ncs-cart-popup">
 				            	<dl>

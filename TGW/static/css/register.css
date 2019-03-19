@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 body { background-color: #FAFAFA;}
 a { color: #06C;}
@@ -47,7 +48,7 @@ a { color: #06C;}
 }
 /*主要部分*/
 .nc-register-bg { 
-	background: #FAFAFA url(../images/register_bg.png) repeat 50% 50% ;
+	/*background: #FAFAFA url(../static/images/register_bg.png) repeat 50% 50% ;*/
 	width: 100%; 
 	height: 680px; 
 	overflow: hidden;
@@ -339,7 +340,7 @@ a { color: #06C;}
 	margin-left: 12px;
 }
 .nc-register-layout .right .api-login a i { 
-	background: url(../images/login_pic.png) no-repeat; 
+	/*background: url(../images/login_pic.png) no-repeat; */
 	display: block; 
 	width: 42px; 
 	height: 42px;
@@ -357,7 +358,7 @@ a { color: #06C;}
 	padding-left: 12px;
 }
 .nc-register-layout .right .reister-after i {
-	 background: url(../images/login_pic.png) no-repeat; 
+	 background: url(../images/login_pic.png) no-repeat;
 	 vertical-align: middle; 
 	 display: inline-block;
 	 width: 24px; 
