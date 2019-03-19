@@ -287,21 +287,20 @@ def returnurl(request):
 @csrf_exempt
 def appnotifyurl(request):
     if request.method == 'POST':
-        # 获取到参数
+
         body_str = request.body.decode('utf-8')
 
-        # 通过parse_qs函数
+
         post_data = parse_qs(body_str)
 
-        # 转换为字典
+
         post_dic = {}
         for k,v in post_data.items():
             post_dic[k] = v[0]
 
-        # 获取订单号
         out_trade_no = post_dic['out_trade_no']
 
-        # 更新状态
+
         Order.objects.filter(identifier=out_trade_no).update(status=1)
 
 
@@ -309,7 +308,6 @@ def appnotifyurl(request):
 
 
 def pay(request):
-    # print(request.GET.get('orderid'))
 
     orderid = request.GET.get('orderid')
     order = Order.objects.get(pk=orderid)
@@ -318,15 +316,14 @@ def pay(request):
     for orderGoods in order.ordergoods_set.all():
         sum += int(orderGoods.goods.price) * int(orderGoods.number)
 
-    # 支付地址信息
     data = alipay.direct_pay(
-        subject='MackBookPro [256G 8G 灰色]', # 显示标题
-        out_trade_no=order.identifier,    # 爱鲜蜂 订单号
-        total_amount=str(sum),   # 支付金额
-        return_url='http://127.0.0.1/tgw/returnurl/'
+        subject='MackBookPro [256G 8G 灰色]',
+        out_trade_no=order.identifier,
+        total_amount=str(sum),
+        return_url='http://47.112.199.164/tgw/returnurl/'
     )
 
-    # 支付地址
+
     alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=data)
 
     response_data = {
